@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.domain;
 
 import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.enums.RepairType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ public class Repair {
     private Long repairID;
 
     @Column(name = "date", nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
     @Enumerated(EnumType.STRING)
