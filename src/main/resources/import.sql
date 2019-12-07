@@ -1,22 +1,13 @@
-INSERT INTO `OWNER` (tax_id, fname, lname, address, phone_number, email, `password`, property_type)
-VALUES ('098765432', 'Dimitris', 'Maleas', 'Sokaki1', '6574847586','dimitris@gmail.com', '123457', 'Apartment Building');
-INSERT INTO `OWNER` (tax_id, fname, lname, address, phone_number, email, `password`, property_type)
-VALUES ('123456789', 'Kwstas', 'Brellas', 'Sok', '4758693048','kwstas@gmail.com', '123456', 'Villa');
-INSERT INTO `OWNER` (tax_id, fname, lname, address, phone_number, email, `password`, property_type)
-VALUES ('584739201', 'Dimitra', 'Tsolakou', 'Sokaki2', '2049506539','dimitra@gmail.com', '123458', 'Villa');
-INSERT INTO `OWNER` (tax_id, fname, lname, address, phone_number, email, `password`, property_type)
-VALUES ('506937485', 'Dionisis', 'Theo', 'Sokaki3', '6384956301','nionios@gmail.com', '123459', 'Cottage');
-INSERT INTO `OWNER` (tax_id, fname, lname, address, phone_number, email, `password`, property_type)
-VALUES ('557748395', 'Xristos', 'Peristeris', 'Sokaki', '4059638265','xristos@gmail.com', '123450', 'Detached House');
+INSERT INTO OWNER (tax_id, fname, lname, address, phone_number, email, `password`, property_type) VALUES('098765432', 'Dimitris', 'Maleas', 'Sokaki1', '6574847586','dimitris@gmail.com', '123457', 'APARTMENT_BUILDING');
+INSERT INTO OWNER (tax_id, fname, lname, address, phone_number, email, `password`, property_type) VALUES('123456789', 'Kwstas', 'Brellas', 'Sok', '4758693048','kwstas@gmail.com', '123456', 'VILLA');
+INSERT INTO OWNER (tax_id, fname, lname, address, phone_number, email, `password`, property_type) VALUES('584739201', 'Dimitra', 'Tsolakou', 'Sokaki2', '2049506539','dimitra@gmail.com', '123458', 'VILLA');
+INSERT INTO OWNER (tax_id, fname, lname, address, phone_number, email, `password`, property_type) VALUES('506937485', 'Dionisis', 'Theo', 'Sokaki3', '6384956301','nionios@gmail.com', '123459', 'COTTAGE');
+INSERT INTO OWNER (tax_id, fname, lname, address, phone_number, email, `password`, property_type) VALUES('557748395', 'Xristos', 'Peristeris', 'Sokaki', '4059638265','xristos@gmail.com', '123450', 'DETACHED_HOUSE');
 
 
-INSERT INTO `REPAIR` (`date`, repair_status, repair_type, cost, address, owner_id, `description`)
-VALUES ('2019-01-01', 'Pending', 'Painting', 150.50, 'Karaiskaki', 1,'Lorem Ipsum');
-INSERT INTO `REPAIR` (`date`, repair_status, repair_type, cost, address, owner_id, `description`)
-VALUES ('2019-02-02', 'In Progress', 'Insulation', 250.10, 'Toumpa', 2,'Lorem Ipsum');
-INSERT INTO `REPAIR` (`date`, repair_status, repair_type, cost, address, owner_id, `description`)
-VALUES ('2019-03-03', 'Finished', 'Plumbing works', 350.30, 'Enwsis', 3,'Lorem Ipsum');
-INSERT INTO `REPAIR` (`date`, repair_status, repair_type, cost, address, owner_id, `description`)
-VALUES ('2019-04-04', 'Finished', 'Electrical works', 45.50, 'Athinoramas', 4,'Lorem Ipsum');
-INSERT INTO `REPAIR` (`date`, repair_status, repair_type, cost, address, owner_id, `description`)
-VALUES ('2019-05-05', 'In Progress', 'Painting', 55.70, 'Panepistimiou', 5,'Lorem Ipsum');
+INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-01-01', 'PENDING', 'PAINTING', 150.50, 'Karaiskaki', 1,'Lorem Ipsum');
+INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-02-02', 'IN_PROGRESS', 'INSULATION', 250.10, 'Toumpa', 2,'Lorem Ipsum');
+INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-03-03', 'FINISHED', 'PLUMBING_WORKS', 350.30, 'Enwsis', 3,'Lorem Ipsum');
+INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-04-04', 'FINISHED', 'ELECTRICAL_WORKS', 45.50, 'Athinoramas', 4,'Lorem Ipsum');
+INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-05-05', 'IN_PROGRESS', 'PAINTING', 55.70, 'Panepistimiou', 5,'Lorem Ipsum');
+

@@ -21,10 +21,10 @@ public class Owner {
     private String taxID;
 
     @Column(name = "fname", nullable = false, length = MAX_NAME_LENGTH)
-    private String fname;
+    private String fName;
 
     @Column(name = "lname", nullable = false, length = MAX_NAME_LENGTH)
-    private String lname;
+    private String lName;
 
     @Column(name = "address", nullable = false, length = MAX_NAME_LENGTH)
     private String address;
@@ -45,12 +45,12 @@ public class Owner {
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
-    public Owner(String fname, String lname, String taxID, String address, String phoneNumber,
+    public Owner(String taxID, String fName, String lName, String address, String phoneNumber,
                  String email, String password, PropertyType propertyType, List<Repair> repairs){
 
-        this.fname = fname;
-        this.lname = lname;
         this.taxID = taxID;
+        this.fName = fName;
+        this.lName = lName;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -80,20 +80,20 @@ public class Owner {
         this.taxID = taxID;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFName() {
+        return fName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getLName() {
+        return lName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setLName(String lName) {
+        this.lName = lName;
     }
 
     public String getAddress() {
