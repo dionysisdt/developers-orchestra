@@ -1,13 +1,16 @@
 package com.projectfuture.team0.developersorchestra.domain;
 
 import com.projectfuture.team0.developersorchestra.enums.PropertyType;
+import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
 import org.hibernate.query.criteria.internal.expression.function.AggregationFunction;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "OWNER", uniqueConstraints = {@UniqueConstraint(columnNames = {"tax_id","phone_number","email"})})
+@Table(name = "OWNER", uniqueConstraints = {@UniqueConstraint(columnNames = {"tax_id"}),
+                                            @UniqueConstraint(columnNames = {"phone_number"}),
+                                            @UniqueConstraint(columnNames = {"email"})})
 public class Owner {
 
     private static final int MAX_NAME_LENGTH = 60;
@@ -42,11 +45,15 @@ public class Owner {
     @Column(name = "property_type", nullable = false, length = MAX_NAME_LENGTH)
     private PropertyType propertyType;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_privileges", nullable = false, length = MAX_NAME_LENGTH)
+    private UserPrivileges userPrivileges;
+
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
     public Owner(String taxID, String fName, String lName, String address, String phoneNumber,
-                 String email, String password, PropertyType propertyType, List<Repair> repairs){
+                 String email, String password, PropertyType propertyType, UserPrivileges userPrivileges, List<Repair> repairs) {
 
         this.taxID = taxID;
         this.fName = fName;
@@ -56,6 +63,7 @@ public class Owner {
         this.email = email;
         this.password = password;
         this.propertyType = propertyType;
+        this.userPrivileges = userPrivileges;
         this.repairs = repairs;
 
     }
@@ -134,6 +142,14 @@ public class Owner {
 
     public void setPropertyType(PropertyType propertyType) {
         this.propertyType = propertyType;
+    }
+
+    public UserPrivileges getUserPrivileges() {
+        return userPrivileges;
+    }
+
+    public void setUserPrivileges(UserPrivileges userPrivileges) {
+        this.userPrivileges = userPrivileges;
     }
 
     public List<Repair> getRepairs() {
