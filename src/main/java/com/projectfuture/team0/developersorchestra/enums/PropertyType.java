@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.enums;
 
 public enum PropertyType {
 
+    DEFAULT("Undefined"),
     APARTMENT_BUILDING("Apartment Building"),
     VILLA("Villa"),
     COTTAGE("Cottage"),

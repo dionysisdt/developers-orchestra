@@ -30,7 +30,7 @@ public class Owner {
     private String lName;
 
     @Column(name = "address", nullable = false, length = MAX_NAME_LENGTH)
-    private String address;
+    private String ownerAddress;
 
     @Column(name = "phone_number", nullable = false, length = MAX_NAME_LENGTH)
     private String phoneNumber;
@@ -52,13 +52,13 @@ public class Owner {
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
-    public Owner(String taxID, String fName, String lName, String address, String phoneNumber,
+    public Owner(String taxID, String fName, String lName, String ownerAddress, String phoneNumber,
                  String email, String password, PropertyType propertyType, UserPrivileges userPrivileges, List<Repair> repairs) {
 
         this.taxID = taxID;
         this.fName = fName;
         this.lName = lName;
-        this.address = address;
+        this.ownerAddress = ownerAddress;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
@@ -104,12 +104,12 @@ public class Owner {
         this.lName = lName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getOwnerAddress() {
+        return ownerAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setOwnerAddress(String ownerAddress) {
+        this.ownerAddress = ownerAddress;
     }
 
     public String getPhoneNumber() {
@@ -159,4 +159,23 @@ public class Owner {
     public void setRepairs(List<Repair> repairs) {
         this.repairs = repairs;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Owner{");
+        sb.append("ownerID=").append(ownerID);
+        sb.append(", taxID='").append(taxID).append('\'');
+        sb.append(", fName='").append(fName).append('\'');
+        sb.append(", lName='").append(lName).append('\'');
+        sb.append(", ownerAddress='").append(ownerAddress).append('\'');
+        sb.append(", phoneNumber='").append(phoneNumber).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", propertyType=").append(propertyType);
+        sb.append(", userPrivileges=").append(userPrivileges);
+        sb.append('}');
+        return sb.toString();
+    }
 }
+
+
