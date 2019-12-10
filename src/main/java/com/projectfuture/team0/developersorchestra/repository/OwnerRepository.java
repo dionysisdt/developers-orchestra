@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
-    Optional<Owner> findOwner(Long ownerID);
+    Optional<Owner> findById(Long ownerID);
 
     Optional<Owner> findOwnerByTaxID(String taxId);
 
@@ -19,7 +19,7 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
     List<Owner> findOwnerByUserPrivileges(UserPrivileges userPrivileges);
 
-    List<Owner> findOwnerByFNameAndLName(String fName, String lName);
+    Optional<Owner> findOwnerByFirstNameAndLastName(String firstName, String lastName);
 
     List<Owner> findOwnerByOwnerAddress(String ownerAddress);
 

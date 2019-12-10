@@ -33,7 +33,7 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public Optional<OwnerModel> findOwner(Long ownerID) {
         return ownerRepository
-                .findOwner(ownerID)
+                .findById(ownerID)
                 .map(owner -> mapper.mapToOwnerModel(owner));
     }
 
@@ -68,9 +68,9 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<OwnerModel> findOwnerByFNameAndLName(String fName, String lName) {
+    public List<OwnerModel> findOwnerByFirstNameAndLastName(String fName, String lName) {
         return ownerRepository
-                .findOwnerByFNameAndLName(fName, lName)
+                .findOwnerByFirstNameAndLastName(fName, lName)
                 .stream()
                 .map(owner -> mapper.mapToOwnerModel(owner))
                 .collect(Collectors.toList());

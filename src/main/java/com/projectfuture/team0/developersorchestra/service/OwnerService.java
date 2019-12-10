@@ -21,7 +21,7 @@ public interface OwnerService {
 
     List<OwnerModel> findOwnerByUserPrivileges(UserPrivileges userPrivileges);
 
-    List<OwnerModel> findOwnerByFNameAndLName(String fName, String lName);
+    List<OwnerModel> findOwnerByFirstNameAndLastName(String fName, String lName);
 
     List<OwnerModel> findOwnerByOwnerAddress(String ownerAddress);
 

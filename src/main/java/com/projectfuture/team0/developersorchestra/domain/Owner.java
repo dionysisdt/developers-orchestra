@@ -2,7 +2,6 @@ package com.projectfuture.team0.developersorchestra.domain;
 
 import com.projectfuture.team0.developersorchestra.enums.PropertyType;
 import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
-import org.hibernate.query.criteria.internal.expression.function.AggregationFunction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,10 +23,10 @@ public class Owner {
     private String taxID;
 
     @Column(name = "fname", nullable = false, length = MAX_NAME_LENGTH)
-    private String fName;
+    private String firstName;
 
     @Column(name = "lname", nullable = false, length = MAX_NAME_LENGTH)
-    private String lName;
+    private String lastName;
 
     @Column(name = "address", nullable = false, length = MAX_NAME_LENGTH)
     private String ownerAddress;
@@ -52,12 +51,12 @@ public class Owner {
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
-    public Owner(String taxID, String fName, String lName, String ownerAddress, String phoneNumber,
+    public Owner(String taxID, String firstName, String lastName, String ownerAddress, String phoneNumber,
                  String email, String password, PropertyType propertyType, UserPrivileges userPrivileges, List<Repair> repairs) {
 
         this.taxID = taxID;
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.ownerAddress = ownerAddress;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -89,19 +88,19 @@ public class Owner {
     }
 
     public String getFName() {
-        return fName;
+        return firstName;
     }
 
     public void setFName(String fName) {
-        this.fName = fName;
+        this.firstName = fName;
     }
 
     public String getLName() {
-        return lName;
+        return lastName;
     }
 
     public void setLName(String lName) {
-        this.lName = lName;
+        this.lastName = lName;
     }
 
     public String getOwnerAddress() {
@@ -165,8 +164,8 @@ public class Owner {
         final StringBuilder sb = new StringBuilder("Owner{");
         sb.append("ownerID=").append(ownerID);
         sb.append(", taxID='").append(taxID).append('\'');
-        sb.append(", fName='").append(fName).append('\'');
-        sb.append(", lName='").append(lName).append('\'');
+        sb.append(", fName='").append(firstName).append('\'');
+        sb.append(", lName='").append(lastName).append('\'');
         sb.append(", ownerAddress='").append(ownerAddress).append('\'');
         sb.append(", phoneNumber='").append(phoneNumber).append('\'');
         sb.append(", email='").append(email).append('\'');
