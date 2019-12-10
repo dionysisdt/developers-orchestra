@@ -11,6 +11,8 @@ public interface RepairService {
 
     List<RepairModel> findRepairsByOwner(Owner owner);
 
+    //List<RepairModel> findRepairsByOwnerId(Long ownerID);
+
     List<RepairModel> findTop10ByDate(LocalDate date);
 
     List<RepairModel> findByDate(LocalDate date);

@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +69,10 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-            <h2>John Smith</h2>
+
+            <h2> <@spring.message "welcome.title"/> ${username!"Guest"}</h2>
+
+            <h2> <@spring.messageArgs args  "welcome.title.dynamic"/> </h2>
 
 
             <div class="table-responsive">
@@ -83,62 +88,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>05/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>Cottage</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>07/01/2019</td>
-                        <td>In progress</td>
-                        <td>Insulation</td>
-                        <td>3,000</td>
-                        <td>Cottage</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>01/01/2019</td>
-                        <td>Pending</td>
-                        <td>Electrical works</td>
-                        <td>3,000</td>
-                        <td>Cottage</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>01/01/2019</td>
-                        <td>Finished</td>
-                        <td>Plumbing works</td>
-                        <td>3,000</td>
-                        <td>Cottage</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>Villa</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Insulation</td>
-                        <td>3,000</td>
-                        <td>Villa</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Electrical works</td>
-                        <td>3,000</td>
-                        <td>Villa</td>
-                        <td>Installation of solar water heaters</td>
-                    <tr>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Plumbing works</td>
-                        <td>3,000</td>
-                        <td>Villa</td>
-                        <td>Installation of solar water heaters</td>
+                    <#list repairs as repair>
+                        <tr>
+                            <td>${repair.date}</td>
+                            <td>${repair.repairStatus}</td>
+                            <td>${repair.repairType}</td>
+                            <td>${repair.cost}</td>
+                            <td>${repair.propertyType}</td>
+                            <td>${repair.description}</td>
+                        </tr>
+                    </#list>
                     </tbody>
                 </table>
             </div>

@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.service;
 
 import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
+import com.projectfuture.team0.developersorchestra.forms.RegisterForm;
 import com.projectfuture.team0.developersorchestra.mappers.OwnerToOwnerModelMapper;
 import com.projectfuture.team0.developersorchestra.model.OwnerModel;
 import com.projectfuture.team0.developersorchestra.repository.OwnerRepository;

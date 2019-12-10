@@ -30,6 +30,17 @@ public class RepairServiceImpl implements RepairService {
                 .collect(Collectors.toList());
     }
 
+    /*
+    @Override
+    public List<RepairModel> findRepairsByOwnerId(Long ownerID) {
+        return repairRepository.
+                findRepairsByOwnerId(ownerID).
+                stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
+    */
+
     @Override
     public List<RepairModel> findTop10ByDate(LocalDate date) {
         return repairRepository
