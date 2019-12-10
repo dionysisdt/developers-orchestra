@@ -34,7 +34,7 @@
 
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="./AdminHome.flth">
+                        <a class="nav-link active" href="./AdminHome.ftlh">
                             <span data-feather="home"></span>
                             Home <span class="sr-only">(current)</span>
                         </a>
