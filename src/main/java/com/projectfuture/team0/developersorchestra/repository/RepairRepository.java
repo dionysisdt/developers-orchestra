@@ -12,6 +12,8 @@ public interface RepairRepository extends JpaRepository<Repair, Long> {
 
     List<Repair> findRepairsByOwner(Owner owner);
 
+    //List<Repair> findRepairsByOwnerId(Long ownerID);
+
     List<Repair> findTop10ByDate(LocalDate date);
 
     List<Repair> findByDate(LocalDate date);

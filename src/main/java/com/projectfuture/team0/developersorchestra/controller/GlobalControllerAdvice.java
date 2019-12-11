@@ -1,0 +1,33 @@
+package com.projectfuture.team0.developersorchestra.controller;
+
+import com.projectfuture.team0.developersorchestra.model.OwnerModel;
+import com.projectfuture.team0.developersorchestra.service.OwnerService;
+import com.projectfuture.team0.developersorchestra.utils.GlobalAttributes;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+@ControllerAdvice(basePackages = "com.projectfuture.team0.developersorchestra.controller")
+public class GlobalControllerAdvice {
+
+    @Autowired
+    private OwnerService ownerService;
+
+
+    @ModelAttribute
+    public void globalAttributes(Model model, @RequestParam(name = "userId", required = false, defaultValue = "0") String userId) {
+
+        if (userIsLoggedIn(userId)) {
+            String username = ownerService.findOwner(Long.parseLong(userId)).map(OwnerModel::getfName).get();
+            model.addAttribute(GlobalAttributes.USERNAME, username);
+        }
+    }
+
+    private boolean userIsLoggedIn(String userId) {
+        return Long.parseLong(userId) > 0;
+    }
+
+}
