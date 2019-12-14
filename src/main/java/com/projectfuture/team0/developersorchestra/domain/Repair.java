@@ -5,8 +5,7 @@ import com.projectfuture.team0.developersorchestra.enums.RepairType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "REPAIR")
@@ -21,7 +20,8 @@ public class Repair {
 
     @Column(name = "date", nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "repair_status", nullable = false, length = MAX_NAME_LENGTH)
@@ -35,7 +35,7 @@ public class Repair {
     private Double cost;
 
     @Column(name = "address", nullable = false, length = MAX_NAME_LENGTH)
-    private String address;
+    private String repairAddress;
 
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "owner_id")
@@ -44,14 +44,14 @@ public class Repair {
     @Column(name = "description", length = MAX_NAME_LENGTH)
     private String description;
 
-    public Repair(LocalDate date, RepairStatus repairStatus, RepairType repairType, Double cost,
-                  String address, Owner owner, String description){
+    public Repair(Date date, RepairStatus repairStatus, RepairType repairType, Double cost,
+                  String repairAddress, Owner owner, String description){
 
         this.date = date;
         this.repairStatus = repairStatus;
         this.repairType = repairType;
         this.cost = cost;
-        this.address = address;
+        this.repairAddress = repairAddress;
         this.owner = owner;
         this.description = description;
 
@@ -68,11 +68,11 @@ public class Repair {
         this.repairID = repairID;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -100,12 +100,12 @@ public class Repair {
         this.cost = cost;
     }
 
-    public String getAddress() {
-        return address;
+    public String getRepairAddress() {
+        return repairAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRepairAddress(String repairAddress) {
+        this.repairAddress = repairAddress;
     }
 
     public Owner getOwner() {
@@ -122,5 +122,20 @@ public class Repair {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Repair{");
+        sb.append("repairID=").append(repairID);
+        sb.append(", date=").append(date);
+        sb.append(", repairStatus=").append(repairStatus);
+        sb.append(", repairType=").append(repairType);
+        sb.append(", cost=").append(cost);
+        sb.append(", repairAddress='").append(repairAddress).append('\'');
+        sb.append(", owner=").append(owner);
+        sb.append(", description='").append(description).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

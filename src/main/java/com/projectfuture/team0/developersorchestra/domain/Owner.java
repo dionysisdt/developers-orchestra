@@ -2,7 +2,6 @@ package com.projectfuture.team0.developersorchestra.domain;
 
 import com.projectfuture.team0.developersorchestra.enums.PropertyType;
 import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
-import org.hibernate.query.criteria.internal.expression.function.AggregationFunction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,13 +23,13 @@ public class Owner {
     private String taxID;
 
     @Column(name = "fname", nullable = false, length = MAX_NAME_LENGTH)
-    private String fName;
+    private String firstName;
 
     @Column(name = "lname", nullable = false, length = MAX_NAME_LENGTH)
-    private String lName;
+    private String lastName;
 
     @Column(name = "address", nullable = false, length = MAX_NAME_LENGTH)
-    private String address;
+    private String ownerAddress;
 
     @Column(name = "phone_number", nullable = false, length = MAX_NAME_LENGTH)
     private String phoneNumber;
@@ -52,13 +51,13 @@ public class Owner {
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
-    public Owner(String taxID, String fName, String lName, String address, String phoneNumber,
+    public Owner(String taxID, String firstName, String lastName, String ownerAddress, String phoneNumber,
                  String email, String password, PropertyType propertyType, UserPrivileges userPrivileges, List<Repair> repairs) {
 
         this.taxID = taxID;
-        this.fName = fName;
-        this.lName = lName;
-        this.address = address;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ownerAddress = ownerAddress;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
@@ -89,27 +88,27 @@ public class Owner {
     }
 
     public String getFName() {
-        return fName;
+        return firstName;
     }
 
     public void setFName(String fName) {
-        this.fName = fName;
+        this.firstName = fName;
     }
 
     public String getLName() {
-        return lName;
+        return lastName;
     }
 
     public void setLName(String lName) {
-        this.lName = lName;
+        this.lastName = lName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getOwnerAddress() {
+        return ownerAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setOwnerAddress(String ownerAddress) {
+        this.ownerAddress = ownerAddress;
     }
 
     public String getPhoneNumber() {
@@ -159,4 +158,23 @@ public class Owner {
     public void setRepairs(List<Repair> repairs) {
         this.repairs = repairs;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Owner{");
+        sb.append("ownerID=").append(ownerID);
+        sb.append(", taxID='").append(taxID).append('\'');
+        sb.append(", fName='").append(firstName).append('\'');
+        sb.append(", lName='").append(lastName).append('\'');
+        sb.append(", ownerAddress='").append(ownerAddress).append('\'');
+        sb.append(", phoneNumber='").append(phoneNumber).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", propertyType=").append(propertyType);
+        sb.append(", userPrivileges=").append(userPrivileges);
+        sb.append('}');
+        return sb.toString();
+    }
 }
+
+

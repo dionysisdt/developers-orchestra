@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.enums;
 
 public enum UserPrivileges {
 
+    DEFAULT("DEFAULT"),
     ADMIN("ADMIN"),
     USER("USER");
 

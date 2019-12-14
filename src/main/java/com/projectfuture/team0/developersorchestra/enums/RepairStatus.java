@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.enums;
 
 public enum RepairStatus {
 
+    DEFAULT("Undefined"),
     PENDING("Pending"),
     IN_PROGRESS("In Progress"),
     FINISHED("Finished");

@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.enums;
 
 public enum RepairType {
 
+    DEFAULT("Undefined"),
     PAINTING("Painting"),
     INSULATION("Insulation"),
     PLUMBING_WORKS("Plumbing works"),
