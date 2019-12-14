@@ -45,7 +45,7 @@ public class Owner {
     private PropertyType propertyType;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_privileges", nullable = false, length = MAX_NAME_LENGTH)
+    @Column(name = "user_privileges", length = MAX_NAME_LENGTH)
     private UserPrivileges userPrivileges;
 
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
@@ -172,6 +172,7 @@ public class Owner {
         sb.append(", password='").append(password).append('\'');
         sb.append(", propertyType=").append(propertyType);
         sb.append(", userPrivileges=").append(userPrivileges);
+        sb.append(", repairs=").append(repairs);
         sb.append('}');
         return sb.toString();
     }

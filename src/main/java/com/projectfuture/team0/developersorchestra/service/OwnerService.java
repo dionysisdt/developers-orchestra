@@ -9,7 +9,13 @@ import java.util.Optional;
 
 public interface OwnerService {
 
-    Optional<OwnerModel> findOwner(Long ownerID);
+    Owner createOwner(Owner owner);
+
+    Owner updateOwner(OwnerModel ownerModel);
+
+    void deleteByOwnerID(Long ownerID);
+
+    Optional<OwnerModel> findOwnerByOwnerID(Long ownerID);
 
     Optional<OwnerModel> findOwnerByTaxID(String taxID);
 
@@ -21,7 +27,7 @@ public interface OwnerService {
 
     List<OwnerModel> findOwnerByUserPrivileges(UserPrivileges userPrivileges);
 
-    List<OwnerModel> findOwnerByFirstNameAndLastName(String fName, String lName);
+    List<OwnerModel> findOwnerByFirstNameAndLastName(String firstName, String lastName);
 
     List<OwnerModel> findOwnerByOwnerAddress(String ownerAddress);
 

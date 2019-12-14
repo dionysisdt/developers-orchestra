@@ -1,5 +1,8 @@
 package com.projectfuture.team0.developersorchestra.model;
 
+import com.projectfuture.team0.developersorchestra.enums.PropertyType;
+import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
+
 public class OwnerModel {
 
     private Long ownerID;
@@ -10,8 +13,8 @@ public class OwnerModel {
     private String phoneNumber;
     private String email;
     private String password;
-    private String propertyType;
-    private String userPrivileges;
+    private PropertyType propertyType;
+    private UserPrivileges userPrivileges;
 
     public Long getOwnerID() {
         return ownerID;
@@ -77,19 +80,19 @@ public class OwnerModel {
         this.password = password;
     }
 
-    public String getPropertyType() {
+    public PropertyType getPropertyType() {
         return propertyType;
     }
 
-    public void setPropertyType(String propertyType) {
+    public void setPropertyType(PropertyType propertyType) {
         this.propertyType = propertyType;
     }
 
-    public String getUserPrivileges() {
+    public UserPrivileges getUserPrivileges() {
         return userPrivileges;
     }
 
-    public void setUserPrivileges(String userPrivileges) {
+    public void setUserPrivileges(UserPrivileges userPrivileges) {
         this.userPrivileges = userPrivileges;
     }
 
@@ -99,7 +102,7 @@ public class OwnerModel {
 
     public OwnerModel(Long ownerID, String taxID, String firstName, String lastName,
                       String ownerAddress, String phoneNumber, String email, String password,
-                      String propertyType, String userPrivileges) {
+                      PropertyType propertyType, UserPrivileges userPrivileges) {
 
         this.ownerID = ownerID;
         this.taxID = taxID;
