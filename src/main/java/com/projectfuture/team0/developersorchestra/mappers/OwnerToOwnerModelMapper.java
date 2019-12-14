@@ -14,13 +14,13 @@ public class OwnerToOwnerModelMapper {
         OwnerModel ownerModel = new OwnerModel();
         ownerModel.setOwnerID(owner.getOwnerID());
         ownerModel.setTaxID(owner.getTaxID());
-        ownerModel.setfName(owner.getFName());
-        ownerModel.setlName(owner.getLName());
+        ownerModel.setFirstName(owner.getFirstName());
+        ownerModel.setLastName(owner.getLastName());
         ownerModel.setPhoneNumber(owner.getPhoneNumber());
         ownerModel.setEmail(owner.getEmail());
         ownerModel.setPassword(owner.getPassword());
-        ownerModel.setPropertyType(owner.getPropertyType() != null ? owner.getPropertyType().getFullName() : PropertyType.DEFAULT.getFullName());
-        ownerModel.setUserPrivileges(owner.getUserPrivileges() != null ? owner.getUserPrivileges().getUserPrivileges() : UserPrivileges.DEFAULT.getUserPrivileges());
+        ownerModel.setPropertyType(owner.getPropertyType() != null ? owner.getPropertyType() : PropertyType.DEFAULT);
+        ownerModel.setUserPrivileges(owner.getUserPrivileges() != null ? owner.getUserPrivileges() : UserPrivileges.DEFAULT);
         return ownerModel;
 
     }

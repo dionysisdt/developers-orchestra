@@ -23,6 +23,30 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerToOwnerModelMapper mapper;
 
     @Override
+    public Owner createOwner(Owner owner) {
+        return ownerRepository.save(owner);
+    };
+
+    @Override
+    public Owner updateOwner(OwnerModel ownerModel) {
+        Owner originalOwner = ownerRepository.findOwnerByOwnerID(ownerModel.getOwnerID()).get();
+        originalOwner.setTaxID(ownerModel.getTaxID());
+        originalOwner.setFirstName(ownerModel.getFirstName());
+        originalOwner.setLastName(ownerModel.getLastName());
+        originalOwner.setEmail(ownerModel.getEmail());
+        originalOwner.setOwnerAddress(ownerModel.getOwnerAddress());
+        originalOwner.setPhoneNumber(ownerModel.getPhoneNumber());
+        originalOwner.setPassword(ownerModel.getPassword());
+        originalOwner.setPropertyType(ownerModel.getPropertyType());
+        return ownerRepository.save(originalOwner);
+    }
+
+    @Override
+    public void deleteByOwnerID(Long ownerID) {
+        ownerRepository.deleteById(ownerID);
+    }
+
+    @Override
     public List<OwnerModel> getAllOwners() {
         return ownerRepository
                 .findAll()
@@ -32,9 +56,9 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Optional<OwnerModel> findOwner(Long ownerID) {
+    public Optional<OwnerModel> findOwnerByOwnerID(Long ownerID) {
         return ownerRepository
-                .findById(ownerID)
+                .findOwnerByOwnerID(ownerID)
                 .map(owner -> mapper.mapToOwnerModel(owner));
     }
 
@@ -69,9 +93,9 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<OwnerModel> findOwnerByFirstNameAndLastName(String fName, String lName) {
+    public List<OwnerModel> findOwnerByFirstNameAndLastName(String firstName, String lastName) {
         return ownerRepository
-                .findOwnerByFirstNameAndLastName(fName, lName)
+                .findOwnerByFirstNameAndLastName(firstName, lastName)
                 .stream()
                 .map(owner -> mapper.mapToOwnerModel(owner))
                 .collect(Collectors.toList());

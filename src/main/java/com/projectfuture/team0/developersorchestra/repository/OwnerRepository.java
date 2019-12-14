@@ -9,7 +9,11 @@ import java.util.Optional;
 
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
-    Optional<Owner> findById(Long ownerID);
+    Owner save(Owner owner);
+
+    void deleteByOwnerID(Long ownerID);
+
+    Optional<Owner> findOwnerByOwnerID(Long ownerID);
 
     Optional<Owner> findOwnerByTaxID(String taxId);
 

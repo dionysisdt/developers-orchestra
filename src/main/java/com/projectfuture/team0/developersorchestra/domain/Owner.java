@@ -45,7 +45,7 @@ public class Owner {
     private PropertyType propertyType;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_privileges", nullable = false, length = MAX_NAME_LENGTH)
+    @Column(name = "user_privileges", length = MAX_NAME_LENGTH)
     private UserPrivileges userPrivileges;
 
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
@@ -87,20 +87,20 @@ public class Owner {
         this.taxID = taxID;
     }
 
-    public String getFName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFName(String fName) {
-        this.firstName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLName(String lName) {
-        this.lastName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getOwnerAddress() {
@@ -164,14 +164,15 @@ public class Owner {
         final StringBuilder sb = new StringBuilder("Owner{");
         sb.append("ownerID=").append(ownerID);
         sb.append(", taxID='").append(taxID).append('\'');
-        sb.append(", fName='").append(firstName).append('\'');
-        sb.append(", lName='").append(lastName).append('\'');
+        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", ownerAddress='").append(ownerAddress).append('\'');
         sb.append(", phoneNumber='").append(phoneNumber).append('\'');
         sb.append(", email='").append(email).append('\'');
         sb.append(", password='").append(password).append('\'');
         sb.append(", propertyType=").append(propertyType);
         sb.append(", userPrivileges=").append(userPrivileges);
+        sb.append(", repairs=").append(repairs);
         sb.append('}');
         return sb.toString();
     }

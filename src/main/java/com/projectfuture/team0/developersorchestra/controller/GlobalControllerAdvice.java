@@ -21,7 +21,7 @@ public class GlobalControllerAdvice {
     public void globalAttributes(Model model, @RequestParam(name = "userId", required = false, defaultValue = "0") String userId) {
 
         if (userIsLoggedIn(userId)) {
-            String username = ownerService.findOwner(Long.parseLong(userId)).map(OwnerModel::getfName).get();
+            String username = ownerService.findOwnerByOwnerID(Long.parseLong(userId)).map(OwnerModel::getFirstName).get();
             model.addAttribute(GlobalAttributes.USERNAME, username);
         }
     }

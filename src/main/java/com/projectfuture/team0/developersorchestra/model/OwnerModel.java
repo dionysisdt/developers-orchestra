@@ -1,17 +1,20 @@
 package com.projectfuture.team0.developersorchestra.model;
 
+import com.projectfuture.team0.developersorchestra.enums.PropertyType;
+import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
+
 public class OwnerModel {
 
     private Long ownerID;
     private String taxID;
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     private String ownerAddress;
     private String phoneNumber;
     private String email;
     private String password;
-    private String propertyType;
-    private String userPrivileges;
+    private PropertyType propertyType;
+    private UserPrivileges userPrivileges;
 
     public Long getOwnerID() {
         return ownerID;
@@ -29,20 +32,20 @@ public class OwnerModel {
         this.taxID = taxID;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getOwnerAddress() {
@@ -77,19 +80,19 @@ public class OwnerModel {
         this.password = password;
     }
 
-    public String getPropertyType() {
+    public PropertyType getPropertyType() {
         return propertyType;
     }
 
-    public void setPropertyType(String propertyType) {
+    public void setPropertyType(PropertyType propertyType) {
         this.propertyType = propertyType;
     }
 
-    public String getUserPrivileges() {
+    public UserPrivileges getUserPrivileges() {
         return userPrivileges;
     }
 
-    public void setUserPrivileges(String userPrivileges) {
+    public void setUserPrivileges(UserPrivileges userPrivileges) {
         this.userPrivileges = userPrivileges;
     }
 
@@ -97,14 +100,14 @@ public class OwnerModel {
 
     }
 
-    public OwnerModel(Long ownerID, String taxID, String fName, String lName,
+    public OwnerModel(Long ownerID, String taxID, String firstName, String lastName,
                       String ownerAddress, String phoneNumber, String email, String password,
-                      String propertyType, String userPrivileges) {
+                      PropertyType propertyType, UserPrivileges userPrivileges) {
 
         this.ownerID = ownerID;
         this.taxID = taxID;
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.ownerAddress = ownerAddress;
         this.phoneNumber = phoneNumber;
         this.email = email;

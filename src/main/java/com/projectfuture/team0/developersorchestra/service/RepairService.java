@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.service;
 
 import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.domain.Repair;
+import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
 
 import java.time.LocalDate;
