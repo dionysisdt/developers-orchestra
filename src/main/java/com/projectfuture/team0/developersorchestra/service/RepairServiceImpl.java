@@ -1,7 +1,7 @@
 package com.projectfuture.team0.developersorchestra.service;
 
 import com.projectfuture.team0.developersorchestra.domain.Owner;
-import com.projectfuture.team0.developersorchestra.domain.Repair;
+import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.mappers.RepairToRepairModelMapper;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
 import com.projectfuture.team0.developersorchestra.repository.RepairRepository;
@@ -31,9 +31,9 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
-    public List<RepairModel> findTop10ByDate(LocalDate date) {
+    public List<RepairModel> findNext10Repairs(LocalDate date) {
         return repairRepository
-                .findTop10ByDate(date)
+                .findTop10ByRepairStatusNotAndDateAfterOrderByDate(RepairStatus.FINISHED, java.sql.Date.valueOf(date))
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
@@ -42,7 +42,7 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public List<RepairModel> findByDate(LocalDate date) {
         return repairRepository
-                .findByDate(date)
+                .findByDate(java.sql.Date.valueOf(date))
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());

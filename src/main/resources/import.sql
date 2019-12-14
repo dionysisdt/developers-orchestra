@@ -33,3 +33,4 @@ INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id,
 INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2020-01-25', 'PENDING', 'PLUMBING_WORKS', 543.30, 'Enwsis76', 7,'Lorem Ipsum');
 INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2020-01-07', 'PENDING', 'ELECTRICAL_WORKS', 405.50, 'Athinoramas89', 8,'Lorem Ipsum');
 INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-12-10', 'IN_PROGRESS', 'PAINTING', 103.70, 'Panepistimiou34', 5,'Lorem Ipsum');
+INSERT INTO REPAIR (`date`, repair_status, repair_type, cost, address, owner_id, `description`) VALUES('2019-12-20', 'FINISHED', 'PAINTING', 103.70, 'Panepistimiou34', 5,'Lorem Ipsum');

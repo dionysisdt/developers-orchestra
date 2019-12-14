@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -19,7 +20,7 @@ public class AdminHomepage {
 
     @GetMapping(value = "/admin/home")
     public String repairs(Model model) {
-        List<RepairModel> repairs = repairService.findAll();
+        List<RepairModel> repairs = repairService.findNext10Repairs(LocalDate.now());
         model.addAttribute(REPAIRS_LIST, repairs);
         return "AdminHome";
     }

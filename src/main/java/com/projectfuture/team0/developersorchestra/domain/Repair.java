@@ -5,8 +5,7 @@ import com.projectfuture.team0.developersorchestra.enums.RepairType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "REPAIR")
@@ -21,7 +20,8 @@ public class Repair {
 
     @Column(name = "date", nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "repair_status", nullable = false, length = MAX_NAME_LENGTH)
@@ -44,7 +44,7 @@ public class Repair {
     @Column(name = "description", length = MAX_NAME_LENGTH)
     private String description;
 
-    public Repair(LocalDate date, RepairStatus repairStatus, RepairType repairType, Double cost,
+    public Repair(Date date, RepairStatus repairStatus, RepairType repairType, Double cost,
                   String repairAddress, Owner owner, String description){
 
         this.date = date;
@@ -68,11 +68,11 @@ public class Repair {
         this.repairID = repairID;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
