@@ -1,4 +1,4 @@
-package com.projectfuture.team0.developersorchestra.controller;
+package com.projectfuture.team0.developersorchestra.controller.owner;
 
 import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.enums.PropertyType;
