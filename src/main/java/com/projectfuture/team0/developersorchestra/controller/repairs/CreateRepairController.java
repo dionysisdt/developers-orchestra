@@ -31,7 +31,7 @@ public class CreateRepairController {
     @Autowired
     private RepairFormToRepairMapper mapper;
 
-    @GetMapping(value = "")
+    @GetMapping(value = "repairs/create")
     public String repairsDynamic(Model model) {
 
         model.addAttribute(REPAIRS_FORM, new RepairForm());
@@ -41,7 +41,7 @@ public class CreateRepairController {
         return "";
     }
 
-    @PostMapping(value = "")
+    @PostMapping(value = "repairs/create")
     public String createRepairs(Model model, @Valid @ModelAttribute(REPAIRS_FORM)
             RepairForm repairForm, BindingResult bindingResult) {
 
