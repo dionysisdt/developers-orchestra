@@ -6,8 +6,15 @@ import com.projectfuture.team0.developersorchestra.model.RepairModel;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public interface RepairService {
+
+    Repair createRepair(Repair repair);
+
+    Repair updateRepair(RepairModel repairModel);
+
+    void deleteById(Long repaidID);
 
     List<RepairModel> findRepairsByOwner(Owner owner);
 
@@ -23,4 +30,5 @@ public interface RepairService {
 
     List<RepairModel> findByRepairAddress(String repairAddress);
 
+    Optional<RepairModel> findByRepairID(Long repairID);
 }
