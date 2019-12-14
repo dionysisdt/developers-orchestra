@@ -6,18 +6,21 @@ import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public interface RepairRepository extends JpaRepository<Repair, Long> {
 
+    Repair save(Repair repair);
+
     List<Repair> findRepairsByOwner(Owner owner);
 
-    //List<Repair> findRepairsByOwnerId(Long ownerID);
+    List<Repair> findTop10ByRepairStatusNotAndDateAfterOrderByDate(RepairStatus repairStatus, Date date);
 
-    List<Repair> findTop10ByDate(LocalDate date);
+    Optional<Repair> findByRepairID(Long repairID);
 
-    List<Repair> findByDate(LocalDate date);
+    List<Repair> findByDate(Date date);
 
     List<Repair> findAll();
 

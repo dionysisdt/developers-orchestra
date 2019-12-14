@@ -126,7 +126,7 @@
                                 <td>${repair.repairStatus}</td>
                                 <td>${repair.repairType}</td>
                                 <td>${repair.cost}</td>
-                                <td>${repair.ownerFirstName} ${repair.ownerLastName}</td>
+                                <td>${repair.owner.firstName} ${repair.owner.lastName}</td>
                                 <td>${repair.description}</td>
                                 <td class="text-center">
                                     <a href="./edit-customer.html" title="Edit Customer">

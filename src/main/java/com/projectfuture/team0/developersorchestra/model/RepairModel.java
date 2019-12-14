@@ -5,19 +5,18 @@ import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.enums.RepairType;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class RepairModel {
 
     private Long repairID;
-    private LocalDate date;
-    private String repairStatus;
-    private String repairType;
+    private Date date;
+    private RepairStatus repairStatus;
+    private RepairType repairType;
     private Double cost;
     private String repairAddress;
-    private String owner;
+    private Owner owner;
     private String description;
-    private String ownerFirstName;
-    private String ownerLastName;
     private String propertyType;
 
     public Long getRepairID() {
@@ -28,27 +27,27 @@ public class RepairModel {
         this.repairID = repairID;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getRepairStatus() {
+    public RepairStatus getRepairStatus() {
         return repairStatus;
     }
 
-    public void setRepairStatus(String repairStatus) {
+    public void setRepairStatus(RepairStatus repairStatus) {
         this.repairStatus = repairStatus;
     }
 
-    public String getRepairType() {
+    public RepairType getRepairType() {
         return repairType;
     }
 
-    public void setRepairType(String repairType) {
+    public void setRepairType(RepairType repairType) {
         this.repairType = repairType;
     }
 
@@ -68,11 +67,11 @@ public class RepairModel {
         this.repairAddress = repairAddress;
     }
 
-    public String getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(Owner owner) {
         this.owner = owner;
     }
 
@@ -82,22 +81,6 @@ public class RepairModel {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getOwnerFirstName() {
-        return ownerFirstName;
-    }
-
-    public void setOwnerFirstName(String ownerFirstName) {
-        this.ownerFirstName = ownerFirstName;
-    }
-
-    public String getOwnerLastName() {
-        return ownerLastName;
-    }
-
-    public void setOwnerLastName(String ownerLastName) {
-        this.ownerLastName = ownerLastName;
     }
 
     public String getPropertyType() {
@@ -111,9 +94,8 @@ public class RepairModel {
     public RepairModel() {
     }
 
-    public RepairModel(LocalDate date, String repairStatus, String repairType, Double cost,
-                       String repairAddress, String owner, String description, String ownerFirstName,
-                       String ownerLastName, String propertyType) {
+    public RepairModel(Date date, RepairStatus repairStatus, RepairType repairType, Double cost,
+                       String repairAddress, Owner owner, String description, String propertyType) {
 
         this.date = date;
         this.repairStatus = repairStatus;
@@ -122,8 +104,6 @@ public class RepairModel {
         this.repairAddress = repairAddress;
         this.owner = owner;
         this.description = description;
-        this.ownerFirstName = ownerFirstName;
-        this.ownerLastName = ownerLastName;
         this.propertyType = propertyType;
 
     }

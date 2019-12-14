@@ -64,6 +64,7 @@
                             </a>
                         </li>
                     </ul>
+                </ul>
             </div>
         </nav>
 
@@ -71,9 +72,6 @@
 
 
             <h2> <@spring.message "welcome.title"/> ${username!"Guest"}</h2>
-
-            <h2> <@spring.messageArgs args  "welcome.title.dynamic"/> </h2>
-
 
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
