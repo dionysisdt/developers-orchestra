@@ -1,4 +1,4 @@
-package com.projectfuture.team0.developersorchestra.controller.owner;
+package com.projectfuture.team0.developersorchestra.controller;
 
 import com.projectfuture.team0.developersorchestra.model.OwnerModel;
 import com.projectfuture.team0.developersorchestra.service.OwnerService;
