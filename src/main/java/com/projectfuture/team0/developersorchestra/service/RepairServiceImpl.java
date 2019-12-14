@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,6 +23,33 @@ public class RepairServiceImpl implements RepairService {
     private RepairToRepairModelMapper mapper;
 
     @Override
+    public Repair createRepair(Repair repair) {
+        return repairRepository.save(repair);
+    }
+
+    @Override
+    public Repair updateRepair(RepairModel repairModel) {
+
+        Repair originalRepair = repairRepository.findByRepairID(repairModel.getRepairID()).get();
+        originalRepair.setRepairAddress(repairModel.getRepairAddress());
+        originalRepair.setOwner(repairModel.getOwner());
+        originalRepair.setDescription(repairModel.getDescription());
+        originalRepair.setCost(repairModel.getCost());
+        originalRepair.setDate(repairModel.getDate());
+        originalRepair.setRepairType(repairModel.getRepairType());
+        originalRepair.setRepairStatus(repairModel.getRepairStatus());
+        return repairRepository.save(originalRepair);
+
+    }
+
+    @Override
+    public void deleteById(Long repairID) {
+
+        repairRepository.deleteById(repairID);
+
+    }
+
+    @Override
     public List<RepairModel> findRepairsByOwner(Owner owner) {
         return repairRepository
                 .findRepairsByOwner(owner)
@@ -29,6 +57,17 @@ public class RepairServiceImpl implements RepairService {
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
     }
+
+    /*
+    @Override
+    public List<RepairModel> findRepairsByOwnerId(Long ownerID) {
+        return repairRepository.
+                findRepairsByOwnerId(ownerID).
+                stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
+    */
 
     @Override
     public List<RepairModel> findNext10Repairs(LocalDate date) {
@@ -73,6 +112,13 @@ public class RepairServiceImpl implements RepairService {
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Optional<RepairModel> findByRepairID(Long repairID) {
+        return repairRepository
+                .findByRepairID(repairID)
+                .map(repair -> mapper.mapToRepairModel(repair));
     }
 
 }

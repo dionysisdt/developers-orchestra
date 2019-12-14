@@ -7,12 +7,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public interface RepairRepository extends JpaRepository<Repair, Long> {
+
+    Repair save(Repair repair);
 
     List<Repair> findRepairsByOwner(Owner owner);
 
     List<Repair> findTop10ByRepairStatusNotAndDateAfterOrderByDate(RepairStatus repairStatus, Date date);
+    Optional<Repair> findByRepairID(Long repairID);
+
+    List<Repair> findTop10ByDate(LocalDate date);
 
     List<Repair> findByDate(Date date);
 
