@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
     <!-- <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet"> -->
 </head>
 
