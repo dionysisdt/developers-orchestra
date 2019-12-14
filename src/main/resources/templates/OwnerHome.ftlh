@@ -76,25 +76,25 @@
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Type of repair</th>
-                        <th>Cost</th>
-                        <th>Type of property</th>
-                        <th>Description</th>
-                    </tr>
+                        <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Type of repair</th>
+                            <th>Cost</th>
+                            <th>Type of property</th>
+                            <th>Description</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <#list repairs as repair>
-                        <tr>
-                            <td>${repair.date}</td>
-                            <td>${repair.repairStatus}</td>
-                            <td>${repair.repairType}</td>
-                            <td>${repair.cost}</td>
-                            <td>${repair.propertyType}</td>
-                            <td>${repair.description}</td>
-                        </tr>
+                        <#list repairs as repair>
+                            <tr>
+                                <td>${repair.date}</td>
+                                <td>${repair.repairStatus}</td>
+                                <td>${repair.repairType}</td>
+                                <td>${repair.cost}</td>
+                                <td>${repair.propertyType}</td>
+                                <td>${repair.description}</td>
+                            </tr>
                     </#list>
                     </tbody>
                 </table>

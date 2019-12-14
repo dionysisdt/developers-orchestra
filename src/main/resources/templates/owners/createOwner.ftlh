@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,69 +80,76 @@
 
             <h2>Create Owner</h2>
             <div class="table-responsive px-2 py-2">
-                <form class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="validationServer01">Social security number </label>
-                        <input type="text" class="form-control" id="validationServer01" placeholder="Social security number" required>
-                        <div class="invalid-feedback">
-                            Please enter your social security number
-                        </div>
-                    </div>
+                <form action="/admin/create" name="ownersForm" method="POST">
+
+                    <label for="taxID">Social security number </label>
+                    <@spring.bind "ownersForm.taxID"/>
+                    <input type="text" class="form-control" id="taxID" name="taxID" placeholder="TaxID" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationServer02">First name</label>
-                            <input type="text" class="form-control" id="validationServer02" placeholder="First name" required>
-                            <div class="invalid-feedback">
-                                Please enter your first name
-                            </div>
+                            <label for="firstName">First name</label>
+                            <@spring.bind "ownersForm.firstName"/>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="FirstName" required>
+                            <#list spring.status.errorMessages as error>
+                                <span>${error}</span>
+                            </#list>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationServer03">Last name</label>
-                            <input type="text" class="form-control" id="validationServer03" placeholder="Last name" required>
-                            <div class="invalid-feedback">
-                                Please enter your last name
-                            </div>
+                            <label for="lastName">Last name</label>
+                            <@spring.bind "ownersForm.lastName"/>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="LastName" required>
+                            <#list spring.status.errorMessages as error>
+                                <span>${error}</span>
+                            </#list>
                         </div>
                     </div>
 
-                    <label for="validationServer04">Address</label>
-                    <input type="text" class="form-control" id="validationServer04" placeholder="Address" required>
-                    <div class="invalid-feedback">
-                        Please enter your address
-                    </div>
+                    <label for="ownerAddress">Address</label>
+                    <@spring.bind "ownersForm.ownerAddress"/>
+                    <input type="text" class="form-control" id="ownerAddress" name="ownerAddress" placeholder="Address" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer05">Email</label>
-                    <input type="text" class="form-control email-validation" id="validationServer05" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                    <div class="invalid-feedback">
-                        Please enter a valid email address
-                    </div>
+                    <label for="phoneNumber">PhoneNumber</label>
+                    <@spring.bind "ownersForm.phoneNumber"/>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="PhoneNumber" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer06">Password</label>
-                    <input type="password" class="form-control" id="validationServer06" placeholder="Password" required>
-                    <div class="invalid-feedback">
-                        Please enter a password
-                    </div>
+                    <label for="email">Email</label>
+                    <@spring.bind "ownersForm.email"/>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer07">Phone number</label>
-                    <input type="text" class="form-control" id="validationServer07" placeholder="Phone" required>
-                    <div class="invalid-feedback">
-                        Please enter a phone number
-                    </div>
+                    <label for="password">Password</label>
+                    <@spring.bind "ownersForm.password"/>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer08">Property type</label>
-                    <select class="custom-select" id="validationServer08" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>Apartment Building</option>
-                        <option>Villa</option>
-                        <option>Cottage</option>
-                        <option>Detached House</option>
+                    <label for="propertyType">Property type</label>
+                    <@spring.bind "ownersForm.propertyType"/>
+                    <select class="custom-select" id="propertyType" name="propertyType" required>
+                        <#if propertyTypes??>
+                            <#list propertyTypes as propertyType>
+                                <option value="${propertyType}">${propertyType}</option>
+                            </#list>
+                        </#if>
                     </select>
-                    <div class="invalid-feedback">
-                        Please choose your property type
-                    </div>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <div class="form-group mt-3">
+                    <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
                             <label class="form-check-label" for="invalidCheck3">
@@ -148,7 +157,6 @@
                             </label>
                         </div>
                     </div>
-
                     <button class="btn btn-primary" type="submit">Submit form</button>
                 </form>
             </div>

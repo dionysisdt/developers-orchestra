@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,35 +91,45 @@
 
             <h2>Create Owner</h2>
             <div class="table-responsive">
-                <form>
-                    <label for="validationServer01">Social security number </label>
-                    <input type="text" class="form-control" id="validationServer01" value="123456789" required>
+                <form action="/admin/edit" method="POST">
+
+                    <input type="hidden" name="ownerID" value="${owner.ownerID}">
+
+                    <label for="taxID">Social security number </label>
+                    <input type="text" class="form-control" id="taxID" name="taxID" value="${owner.taxID}">
+
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationServer01">First name</label>
-                            <input type="text" class="form-control" id="validationServer01" value="John" required>
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" value="${owner.firstName}">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationServer02">Last name</label>
-                            <input type="text" class="form-control" id="validationServer02" value="Smith" required>
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" value="${owner.lastName}">
                         </div>
                     </div>
-                    <label for="validationServer02">Address</label>
-                    <input type="text" class="form-control" id="validationServer02" value="1234 Main St, Athens, Greece" required>
-                    <label for="validationServer02">Phone number</label>
-                    <input type="text" class="form-control" id="validationServer02" value="6999999999" required>
-                    <label for="validationServer02">Email</label>
-                    <input type="text" class="form-control" id="validationServer02" value="John.Smith@gmail.com" required>
-                    <label for="validationServer02">Password</label>
-                    <input type="text" class="form-control" id="validationServer02" value="*******" required>
-                    <label for="validationServer04">Property type</label>
-                    <select class="custom-select" id="validationServer04" required>
-                        <option selected disabled value="">Apartment Building</option>
-                        <option>Apartment Building</option>
-                        <option>Villa</option>
-                        <option>Cottage</option>
-                        <option>Detached House</option>
+
+                    <label for="ownerAddress">Address</label>
+                    <input type="text" class="form-control" id="ownerAddress" name="ownerAddress" value="${owner.ownerAddress}">
+
+                    <label for="phoneNumber">PhoneNumber</label>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" value="${owner.phoneNumber}">
+
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="${owner.email}">
+
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" value="${owner.password}">
+
+                    <label for="propertyType">Property type</label>
+                    <select class="custom-select" id="propertyType" name="propertyType">
+                        <#if propertyTypes??>
+                            <#list propertyTypes as propertyType>
+                                <option value="${propertyType}"<#if owner.propertyType == propertyType> selected</#if>>${propertyType}</option>
+                            </#list>
+                        </#if>
                     </select>
+
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
@@ -126,7 +138,7 @@
                             </label>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Update</button>
+                    <button class="btn btn-primary" type="submit">Update Owner</button>
                 </form>
             </div>
 

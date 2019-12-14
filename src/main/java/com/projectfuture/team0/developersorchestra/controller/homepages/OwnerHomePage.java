@@ -24,7 +24,7 @@ public class OwnerHomePage {
     public String repairs(Model model) {
         List<RepairModel> repairs = repairService.findAll();
         model.addAttribute(REPAIRS_LIST, repairs);
-        return "OwnerHome";
+        return "homepages/owner";
     }
 
 

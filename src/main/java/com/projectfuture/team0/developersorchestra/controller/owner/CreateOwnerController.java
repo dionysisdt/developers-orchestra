@@ -36,7 +36,7 @@ public class CreateOwnerController {
 
             model.addAttribute(OWNERS_FORM, new OwnerForm());
             model.addAttribute(PROPERTY_TYPES, PropertyType.values());
-            return "/CreateOwner";
+            return "owners/createOwner";
         }
 
         @PostMapping(value = "/admin/create")
@@ -48,12 +48,12 @@ public class CreateOwnerController {
             if (bindingResult.hasErrors()) {
                 //have some error handling here, perhaps add extra error messages to the model
                 model.addAttribute(ERROR_MESSAGE, "an error occurred");
-                return "/CreateOwner";
+                return "owners/createOwner";
             }
 
             Owner owner = mapper.toOwner(ownerForm);
             ownerService.createOwner(owner);
-            return "redirect:/owner/home";
+            return "redirect:/homepages/admin";
             //return "redirect:/admin/home";
         }
 

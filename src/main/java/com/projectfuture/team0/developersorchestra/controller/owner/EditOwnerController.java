@@ -31,7 +31,7 @@ public class EditOwnerController {
         OwnerModel ownerModel = ownerService.findOwnerByOwnerID(ownerID).get();
         model.addAttribute(OWNER_ATTR, ownerModel);
         model.addAttribute(PROPERTY_TYPES, PropertyType.values());
-        return "/EditOwner";
+        return "owners/editOwner";
     }
 
     @PostMapping(value = "/admin/edit")

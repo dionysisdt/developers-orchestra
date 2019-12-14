@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,196 +124,27 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#01</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#02</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#03</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#04</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#05</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#06</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#07</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#08</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#09</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#10</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>John Smith</td>
-                        <td>TBC with client</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
+                    <#list repairs as repair>
+                        <tr>
+                            <td><a href="./edit-customer.html" title="Edit Customer">#${repair.repairID}</a></td>
+                            <td>${repair.date}</td>
+                            <td>${repair.repairStatus}</td>
+                            <td>${repair.repairType}</td>
+                            <td>${repair.cost}</td>
+                            <td>${repair.owner.firstName} ${repair.owner.lastName}</td>
+                            <td>${repair.description}</td>
+                            <td class="text-center">
+                                <a href="./edit-customer.html" title="Edit Customer">
+                                    <span data-feather="edit-3"></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="./edit-customer.html" title="Remove Customer">
+                                    <span data-feather="trash-2"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </#list>
                     </tbody>
                 </table>
             </div>

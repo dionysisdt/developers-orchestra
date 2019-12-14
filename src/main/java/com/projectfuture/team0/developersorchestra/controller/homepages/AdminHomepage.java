@@ -22,7 +22,7 @@ public class AdminHomepage {
     public String repairs(Model model) {
         List<RepairModel> repairs = repairService.findNext10Repairs(LocalDate.now());
         model.addAttribute(REPAIRS_LIST, repairs);
-        return "AdminHome";
+        return "homepages/admin";
     }
 
 }
