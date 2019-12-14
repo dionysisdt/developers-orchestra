@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V1</title>
+    <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/util.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
     <!--===============================================================================================-->
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
@@ -31,7 +31,7 @@
 <form class="form-signin">
 
     <div class="login100-pic js-tilt" data-tilt>
-        <img class="mb-4" src="images/violin.png" alt="tools.png" width="256" height="256">
+        <img class="mb-4" src="../../static/images/violin.png" alt="tools.png" width="256" height="256">
     </div>
 
 
@@ -82,21 +82,21 @@
     feather.replace();
 </script>
 <!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/vendor/bootstrap/js/popper.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
+<script src="static/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/tilt/tilt.jquery.min.js"></script>
+<script src="static/vendor/tilt/tilt.jquery.min.js"></script>
 <script >
     $('.js-tilt').tilt({
         scale: 1.1
     })
 </script>
 <!--===============================================================================================-->
-<script src="js/main.js"></script>
+<script src="static/js/main.js"></script>
 </body>
 
 </html>

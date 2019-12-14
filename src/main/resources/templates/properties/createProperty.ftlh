@@ -6,26 +6,20 @@
     <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
     <meta color="green" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Project</title>
+    <title>Developer Orchestra</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../static/images/icons/favicon.ico"/>
+
 </head>
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
 
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
-        <span>Company name</span>
+        <span>Developer Orchestra</span>
     </a>
-
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <span data-feather="log-out"></span>
-            <a class="nav-link" href="./login.html">Logout</a>
-
-        </li>
-    </ul>
 </nav>
 
 
@@ -37,36 +31,36 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="./AdminHome.html">
-                            <span data-feather="home"></span>
+                            <span data-feather="truck"></span>
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./EditProperty.html">
+                        <a class="nav-link" href="./Properties.html">
                             <span data-feather="codesandbox"></span>
                             Properties
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./CreateProperty.html">
+                        <a class="nav-link active" href="./CreateProperty.html">
                             <span data-feather="plus-square"></span>
-                            Create Property
+                            Create Property <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item" href="./index.html">
+                    <li class="nav-item">
                         <a class="nav-link" href="./Owners.html">
                             <span data-feather="users"></span>
                             Property Owners
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./create-customer.html">
+                        <a class="nav-link" href="./CreateOwner.html">
                             <span data-feather="user-plus"></span>
-                            Create Owner <span class="sr-only">(current)</span>
+                            Create Owner
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./EditRepair.html">
+                        <a class="nav-link" href="./Repairs.html">
                             <span data-feather="tool"></span>
                             Repairs
                         </a>
@@ -91,7 +85,7 @@
 
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./login.html">
                             <span data-feather="log-out"></span>
                             Logout
                         </a>
@@ -103,53 +97,49 @@
     </div>
     </nav>
     <div class="w3-row-padding">
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 py-2 px-2">
 
-            <h2>Create Owner</h2>
+            <h2>Create Property</h2>
             <div class="table-responsive">
-                <form>
-                    <label for="validationServer01">Social security number </label>
-                    <input type="text" class="form-control" id="validationServer01" value="Social security number" required>
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <label for="validationServer01">First name</label>
-                            <input type="text" class="form-control" id="validationServer01" value="First name" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="validationServer02">Last name</label>
-                            <input type="text" class="form-control" id="validationServer02" value="Last name" required>
-                        </div>
+                <form class="needs-validation px-2 py-2" novalidate>
+
+                    <label for="validationServer01">Property number </label>
+                    <input type="text" class="form-control" id="validationServer01" placeholder="Property number" required>
+                    <div class="invalid-feedback">
+                        Please enter a property number
                     </div>
-                    <label for="validationServer02">Address</label>
-                    <input type="text" class="form-control" id="validationServer02" value="Address" required>
-                    <label for="validationServer02">Email</label>
-                    <input type="text" class="form-control" id="validationServer02" value="Email" required>
-                    <label for="validationServer02">Password</label>
-                    <input type="text" class="form-control" id="validationServer02" value="Password" required>
-                    <label for="validationServerUsername">Username</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                        </div>
-                        <input type="text" class="form-control" id="validationServerUsername" value="Username" aria-describedby="inputGroupPrepend3" required>
+
+                    <label for="validationServer02">Property address</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Property address" required>
+                    <div class="invalid-feedback">
+                        Please enter property address
                     </div>
+
+                    <label for="validationServer03">Year of manufacture</label>
+                    <input type="text" class="form-control" id="validationServer03" placeholder="Year of manufacture" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid year
+                    </div>
+
                     <label for="validationServer04">Property type</label>
                     <select class="custom-select" id="validationServer04" required>
-                        <option selected disabled value="">choose</option>
+                        <option selected disabled>Choose...</option>
                         <option>Apartment Building</option>
                         <option>Villa</option>
                         <option>Cottage</option>
                         <option>Detached House</option>
                     </select>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
-                            <label class="form-check-label" for="invalidCheck3">
-                                Agree to terms and conditions
-                            </label>
-                        </div>
+                    <div class="invalid-feedback">
+                        Please choose a property type
                     </div>
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+
+                    <label for="validationServer05">Social security number </label>
+                    <input type="text" class="form-control" id="validationServer05" placeholder="Social security number" required>
+                    <div class="invalid-feedback">
+                        Please enter your social security number
+                    </div>
+
+                    <button class="btn btn-primary mt-4" type="submit">Create</button>
                 </form>
             </div>
 
@@ -164,6 +154,25 @@
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
     feather.replace();
+
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
 </script>
 </body>
 </html>

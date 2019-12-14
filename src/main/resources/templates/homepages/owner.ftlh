@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#000048">
-    <title>Project</title>
+    <title>Developer Orchestra</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+
 </head>
 
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
 
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
-        <span>Company name</span>
+        <span>Developer Orchestra</span>
+        <span></span>
+        <span></span>
     </a>
 
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-
-            <a class="nav-link" href="./login.html">Logout</a>
-
-        </li>
-    </ul>
 </nav>
 
 <div class="container-fluid">
@@ -34,15 +31,9 @@
 
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="./AdminHome.ftlh">
+                        <a class="nav-link active" href="./OwnerHome.html">
                             <span data-feather="home"></span>
-                            Home <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./CreateProperty.html">
-                            <span data-feather="plus-square"></span>
-                            Add Repair
+                            Home <span class="truck">(current)</span>
                         </a>
                     </li>
 
@@ -56,12 +47,13 @@
 
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="./login.html">
                                 <span data-feather="log-out"></span>
                                 Logout
                             </a>
                         </li>
                     </ul>
+                </ul>
             </div>
         </nav>
 
