@@ -5,14 +5,12 @@ import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.enums.RepairType;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class RepairModel {
 
     private Long repairID;
     private Date date;
-    private String repairStatus;
-    private String repairType;
-    private LocalDate date;
     private RepairStatus repairStatus;
     private RepairType repairType;
     private Double cost;

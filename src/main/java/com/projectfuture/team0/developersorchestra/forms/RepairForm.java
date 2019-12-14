@@ -5,15 +5,15 @@ import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.enums.RepairType;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class RepairForm {
 
     private Long repairID;
 
-
     private RepairStatus repairStatus;
 
-    private LocalDate date;
+    private Date date;
 
     private RepairType repairType;
 
@@ -33,11 +33,11 @@ public class RepairForm {
         this.repairStatus = repairStatus;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

@@ -4,8 +4,8 @@ public class OwnerModel {
 
     private Long ownerID;
     private String taxID;
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     private String ownerAddress;
     private String phoneNumber;
     private String email;
@@ -29,20 +29,20 @@ public class OwnerModel {
         this.taxID = taxID;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getOwnerAddress() {
@@ -97,14 +97,14 @@ public class OwnerModel {
 
     }
 
-    public OwnerModel(Long ownerID, String taxID, String fName, String lName,
+    public OwnerModel(Long ownerID, String taxID, String firstName, String lastName,
                       String ownerAddress, String phoneNumber, String email, String password,
                       String propertyType, String userPrivileges) {
 
         this.ownerID = ownerID;
         this.taxID = taxID;
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.ownerAddress = ownerAddress;
         this.phoneNumber = phoneNumber;
         this.email = email;

@@ -1,4 +1,4 @@
-package com.projectfuture.team0.developersorchestra.controller.admin;
+package com.projectfuture.team0.developersorchestra.controller.owner;
 
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
 import com.projectfuture.team0.developersorchestra.service.RepairService;
