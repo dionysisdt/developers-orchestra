@@ -1,3 +1,4 @@
+<#import "/spring.ftl" as spring />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
-    <!-- <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet"> -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,7 +40,8 @@
                             <span data-feather="users"></span>
                             Property Owners
                         </a>
-                    </li<li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="./SearchOwner.html">
                             <span data-feather="search"></span>
                             Search for owners <span class="sr-only">(current)</span>
@@ -79,26 +81,27 @@
                 </ul>
             </div>
         </nav>
+    </div>
+</div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-            <form class="form-inline">
+            <form class="form-inline" action="/admin/search/owner" name="searchOwnerForm" method="POST">
 
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><span data-feather="at-sign"></span></div>
                     </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
 
-                <label class="sr-only" for="inlineFormInputName2">social security number</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="social security number">
+                <label class="sr-only" for="inlineFormInputName2">TaxID</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="taxID" name="taxID" placeholder="TaxID">
 
-                <button type="Search" class="btn btn-primary mb-2">Search</button>
+                <button type="Submit" class="btn btn-primary mb-2">Search</button>
 
             </form>
-
-
+        </main>
 
 
 
@@ -114,6 +117,6 @@
             <script src="static/js/bootstrap.bundle.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-            <script src="static/js/dashboard.js"></script></body>
+            <script src="static/js/dashboard.js"></script>
 </body>
 </html>
