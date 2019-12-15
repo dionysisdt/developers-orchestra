@@ -1,3 +1,4 @@
+<#import "/spring.ftl" as spring />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@
 
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="./AdminHome.html">
+                        <a class="nav-link" href="/admin/home">
                             <span data-feather="truck"></span> Home
                         </a>
                     </li>
@@ -75,7 +76,7 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Social security number</th>
+                        <th>TaxID</th>
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Address</th>
@@ -87,208 +88,30 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#01</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                    <span data-feather="trash-2"></span>
+                    <#list owners as owner>
+                        <tr>
+                            <td>${owner.ownerID}</td>
+                            <td>${owner.taxID}</td>
+                            <td>${owner.firstName}</td>
+                            <td>${owner.lastName}</td>
+                            <td>${owner.ownerAddress}</td>
+                            <td>${owner.email}</td>
+                            <td>${owner.phoneNumber}</td>
+                            <td>${owner.propertyType}</td>
+                            <td class="text-center">
+                                <a href="/admin/{ownerID}/edit" title="Edit Owner">
+                                    <span data-feather="edit-3"></span>
                                 </a>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#02</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#03</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#04</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#05</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#06</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#07</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#08</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#09</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#10</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" data-href="/admin/{ownerID}/delete" data-toggle="modal" data-target="#confirm-delete">
+                                    <a href="#" data-href="/admin/{ownerID}/delete" data-toggle="modal" data-target="#confirm-delete">
+                                        <span data-feather="trash-2"></span>
+                                    </a>
+                                </a>
+                            </td>
+                        </tr>
+                    </#list>
                     </tbody>
                 </table>
             </div>

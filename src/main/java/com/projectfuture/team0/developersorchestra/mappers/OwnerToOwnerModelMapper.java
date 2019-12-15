@@ -17,6 +17,7 @@ public class OwnerToOwnerModelMapper {
         ownerModel.setFirstName(owner.getFirstName());
         ownerModel.setLastName(owner.getLastName());
         ownerModel.setPhoneNumber(owner.getPhoneNumber());
+        ownerModel.setOwnerAddress(owner.getOwnerAddress());
         ownerModel.setEmail(owner.getEmail());
         ownerModel.setPassword(owner.getPassword());
         ownerModel.setPropertyType(owner.getPropertyType() != null ? owner.getPropertyType() : PropertyType.DEFAULT);
