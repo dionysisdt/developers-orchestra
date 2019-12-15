@@ -107,13 +107,13 @@
                             <td>${owner.phoneNumber}</td>
                             <td>${owner.propertyType}</td>
                             <td class="text-center">
-                                <a href="./edit-customer.html" title="Edit Customer">
+                                <a href="/admin/{ownerID}/edit" title="Edit Owner">
                                     <span data-feather="edit-3"></span>
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                    <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
+                                <a href="#" data-href="/admin/{ownerID}/delete" data-toggle="modal" data-target="#confirm-delete">
+                                    <a href="#" data-href="/admin/{ownerID}/delete" data-toggle="modal" data-target="#confirm-delete">
                                         <span data-feather="trash-2"></span>
                                     </a>
                                 </a>

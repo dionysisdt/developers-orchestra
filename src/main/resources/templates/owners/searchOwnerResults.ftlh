@@ -131,7 +131,7 @@
                             <td>${owner.email}</td>
                             <td>${owner.phoneNumber}</td>
                             <td>${owner.propertyType}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/books/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
+                            <td class="text-center"><a class="btn btn-link" href="/admin/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
                             <td class="text-center">
 
                                 <button
@@ -148,26 +148,31 @@
                     </#list>
                     </#if>
                     </tbody>
+
                 </table>
+
+                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                Confirm Delete
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the record?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteForm">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
-<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                Confirm Delete
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete the record?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok text-white">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
+
 
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
