@@ -31,7 +31,7 @@
 
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="./OwnerHome.html">
+                                <a class="nav-link active" href="/owner/home">
                                     <span data-feather="home"></span>
                                     Home <span class="truck">(current)</span>
                                 </a>
@@ -47,7 +47,7 @@
 
                             <ul class="nav flex-column mb-2">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./login.html">
+                                    <a class="nav-link" href="/login">
                                         <span data-feather="log-out"></span>
                                         Logout
                                     </a>

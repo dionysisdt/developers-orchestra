@@ -28,51 +28,32 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin">
 
-    <div class="login100-pic js-tilt" data-tilt>
-        <img class="mb-4" src="../../static/images/violin.png" alt="tools.png" width="256" height="256">
-    </div>
-
-
-    <span class="login100-form-title">
-						Please login
-					</span>
-    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-        <input class="input100" type="text" name="email" placeholder="Email">
+<form class="login100-form validate-form" name='login' action="/login" method="POST">
+<span class="login100-form-title">
+Member Login
+</span>
+    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+        <input class="input100" type='text' class="form-control" name='username' placeholder="Username">
         <span class="focus-input100"></span>
         <span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </span>
     </div>
-
-    <div class="wrap-input100 validate-input" data-validate = "Password is required">
-        <input class="input100" type="password" name="pass" placeholder="Password">
+    <div class="wrap-input100 validate-input" data-validate="Password is required">
+        <input class="input100" type="password" name="password" placeholder="Password">
         <span class="focus-input100"></span>
         <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-    </div>
-    <label>
-        <input type="checkbox" value="remember-me"> Remember me
-    </label>
+            <i class="fa fa-lock" aria-hidden="true"></i>
+        </span>
     </div>
     <div class="container-login100-form-btn">
-        <button class="login100-form-btn">
-            Login
-        </button>
+        <button class="login100-form-btn" type="submit">Login</button>
     </div>
-    <div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-        <a class="txt2" href="#">
-            Username / Password?
-        </a>
-    </div>
-
-    <p class="mt-5 mb-3 text-muted">© 2018-2019</p>
+    <div class="text-center p-t-12"></div>
+    <div class="text-center p-t-136"></div>
 </form>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

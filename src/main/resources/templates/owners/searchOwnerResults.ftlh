@@ -34,11 +34,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./Owners.html">
+                        <a class="nav-link" href="./owners">
                             <span data-feather="users"></span>
                             Property Owners
                         </a>
-                    </li<li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="./SearchOwner.html">
                             <span data-feather="search"></span>
                             Search for owners <span class="sr-only">(current)</span>
@@ -70,7 +71,7 @@
 
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">
+                        <a class="nav-link" href="./login">
                             <span data-feather="log-out"></span>
                             Logout
                         </a>
@@ -136,8 +137,12 @@
                             </a>
                         </td>
                     </tr>
-
-
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
 
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -151,6 +156,7 @@
                     <script src="static/js/bootstrap.bundle.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-                    <script src="static/js/dashboard.js"></script></body>
+                    <script src="static/js/dashboard.js"></script>
+
 </body>
 </html>

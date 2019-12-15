@@ -78,7 +78,7 @@
 
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">
+                        <a class="nav-link" href="./login">
                             <span data-feather="log-out"></span>
                             Logout
                         </a>

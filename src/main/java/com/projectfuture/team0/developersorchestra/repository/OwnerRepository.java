@@ -20,11 +20,12 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
     Optional<Owner> findOwnerByPhoneNumber(String phoneNumber);
 
     Optional<Owner> findOwnerByEmail(String email);
-
+    
     List<Owner> findOwnerByUserPrivileges(UserPrivileges userPrivileges);
 
     Optional<Owner> findOwnerByFirstNameAndLastName(String firstName, String lastName);
 
     List<Owner> findOwnerByOwnerAddress(String ownerAddress);
 
+    Owner findByEmail(String username);
 }
