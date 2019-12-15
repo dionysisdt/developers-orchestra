@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/side.css">
 </head>
 
 <body>
@@ -43,62 +43,67 @@
 
 <div class="area"></div>
 
-<nav class="main-menu">
-    <ul>
-        <li>
-            <a href="http://justinfarrow.com">
-                <i class="fa fa-home fa-2x"></i>
-                <span class="nav-text">Dashboard</span>
-            </a>
-        </li>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="main-menu">
 
-        <li class="has-subnav">
-            <a class="nav-link active" href="./AdminHome.html">
-                <i class="fa fa-laptop fa-2x"></i>
-                <span class="nav-text">
+            <ul>
+                <li>
+                    <a href="http://justinfarrow.com">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="has-subnav">
+                    <a class="nav-link active" href="./AdminHome.html">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
          <span data-feather="truck"></span> Home</span></a>
-        </li>
+                </li>
 
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-list fa-2x"></i>
-                <span class="nav-text">Forms</span>
-            </a>
-        </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">Forms</span>
+                    </a>
+                </li>
 
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-folder-open fa-2x"></i>
-                <span class="nav-text">Pages</span>
-            </a>
-        </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">Pages</span>
+                    </a>
+                </li>
 
-        <li>
-            <a href="#">
-                <i class="fa fa-bar-chart-o fa-2x"></i>
-                <span class="nav-text">Graphs and Statistics</span>
-            </a>
-        </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">Graphs and Statistics</span>
+                    </a>
+                </li>
 
-    </ul>
+            </ul>
 
-    <ul class="logout">
-        <li>
-            <a href="#">
-                <i class="fa fa-power-off fa-2x"></i>
-                <span class="nav-text">
+            <ul class="logout">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
 Logout
 </span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+        </main>
+    </div>
 </div>
 </div>
-
-<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+</div>
 
 <h2>Active repairs</h2>
 
