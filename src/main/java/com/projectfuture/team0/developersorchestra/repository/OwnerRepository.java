@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.repository;
 
 import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
+import com.projectfuture.team0.developersorchestra.model.OwnerModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
     Optional<Owner> findOwnerByPhoneNumber(String phoneNumber);
 
     Optional<Owner> findOwnerByEmail(String email);
-    
+
     List<Owner> findOwnerByUserPrivileges(UserPrivileges userPrivileges);
 
     Optional<Owner> findOwnerByFirstNameAndLastName(String firstName, String lastName);
@@ -28,4 +29,7 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
     List<Owner> findOwnerByOwnerAddress(String ownerAddress);
 
     Owner findByEmail(String username);
+
+    List<Owner> findOwnerByTaxIDOrEmail(String taxID, String email);
+
 }

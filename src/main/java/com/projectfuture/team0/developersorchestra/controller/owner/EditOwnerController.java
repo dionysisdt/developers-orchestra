@@ -19,7 +19,7 @@ public class EditOwnerController {
     @Autowired
     private OwnerService ownerService;
 
-    @PostMapping(value = "admin/{ownerID}/delete")
+    @PostMapping(value = "/admin/{ownerID}/delete")
     public String deleteOwner(@PathVariable Long ownerID) {
         ownerService.deleteByOwnerID(ownerID);
         return "redirect:/admin/home";

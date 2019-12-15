@@ -1,16 +1,9 @@
+<#import "/spring.ftl" as spring />
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#000048">
+    <#include "../partials/head.ftlh">
     <title>Developer Orchestra</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
-    <!-- <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -80,28 +73,27 @@
                 </ul>
             </div>
         </nav>
+    </div>
+</div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-            <form class="form-inline">
+            <form class="form-inline" action="/admin/search/owner" name="searchOwnerForm" method="POST">
 
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><span data-feather="at-sign"></span></div>
                     </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
 
-                <label class="sr-only" for="inlineFormInputName2">social security number</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="social security number">
+                <label class="sr-only" for="inlineFormInputName2">TaxID</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="taxID" name="taxID" placeholder="TaxID">
 
-                <button type="Search" class="btn btn-primary mb-2">Search</button>
+                <button type="Submit" class="btn btn-primary mb-2">Search</button>
 
             </form>
         </main>
-    </div>
-</div>
-
 
 
 

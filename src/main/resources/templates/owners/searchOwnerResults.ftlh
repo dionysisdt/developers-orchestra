@@ -1,16 +1,9 @@
+<#import "/spring.ftl" as spring />
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#000048">
+    <#include "../partials/head.ftlh">
     <title>Developer Orchestra</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
-    <!-- <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -79,6 +72,8 @@
                 </ul>
             </div>
         </nav>
+    </div>
+</div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
@@ -105,7 +100,7 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Social security number</th>
+                        <th>TaxID</th>
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Address</th>
@@ -117,32 +112,59 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#01</a></td>
-                        <td>123456789</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>johnsmith@gmail.com</td>
-                        <td>6999999999</td>
-                        <td>Detached house</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
+                    <#if owners??>
+                    <#list owners as owner>
+                        <tr data-id="${owner.ownerID}">
+                            <td><a href="/admin/${owner.ownerID}/edit">#${owner.ownerID}</a></td>
+                            <td>${owner.taxID}</td>
+                            <td>${owner.firstName}</td>
+                            <td>${owner.lastName}</td>
+                            <td>${owner.ownerAddress}</td>
+                            <td>${owner.email}</td>
+                            <td>${owner.phoneNumber}</td>
+                            <td>${owner.propertyType}</td>
+                            <td class="text-center"><a class="btn btn-link" href="/admin/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
+                            <td class="text-center">
+
+                                <button
+                                        class="btn btn-link"
+                                        data-toggle="modal"
+                                        data-target="#modal"
+                                        data-id="${owner.ownerID}"
+                                >
+                                    <span data-feather="x"></span>
+                                </button>
+
+                            </td>
+                        </tr>
+                    </#list>
+                    </#if>
                     </tbody>
+
                 </table>
+
+                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                Confirm Delete
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the record?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteForm">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
-    </div>
-</div>
+
+
 
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -150,6 +172,11 @@
                     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
                     <script>
                         feather.replace();
+
+                        $('#confirm-delete').on('show.bs.modal', function(e) {
+                            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+                        });
+
                     </script>
                     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
                     <script>window.jQuery || document.write('<script src="static/js/jquery.slim.min.js"><\/script>')</script>
@@ -157,6 +184,5 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
                     <script src="static/js/dashboard.js"></script>
-
 </body>
 </html>
