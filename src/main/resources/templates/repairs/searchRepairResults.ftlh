@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,8 +84,6 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-
-
             <form class="form-inline">
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
@@ -123,47 +123,8 @@
                         <th class="text-center">Remove</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#02</a></td>
-                        <td>05/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#05</a></td>
-                        <td>05/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
                     <tr>
                         <td><a href="./edit-customer.html" title="Edit Customer">#08</a></td>
                         <td>03/01/2019</td>
@@ -184,47 +145,8 @@
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#09</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#10</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Remove Customer">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
                     </tbody>
+
                 </table>
             </div>
         </main>

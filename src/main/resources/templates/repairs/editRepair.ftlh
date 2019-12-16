@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,39 +96,55 @@
 
             <h2>Edit Repair</h2>
             <div class="table-responsive">
-                <form>
-                    <div class="input-group mb-2 mr-sm-2">
+                <form action="/repairs/edit" method="POST">
+                    <label for="datepicker">Date</label>
+                    <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><span data-feather="calendar"></span></div>
+                            <span class="input-group-text"><span data-feather="calendar"></span></span>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Date">
+                        <input type="text" class="form-control" id="datepicker" name="publicationDate" value="${repair.repairDate}">
                     </div>
-                    <label for="validationServer02">Status</label>
-                    <select class="custom-select" id="validationServer02" required>
-                        <option selected disabled value="">choose</option>
-                        <option>Pending</option>
-                        <option>In progress</option>
-                        <option>Finished</option>
+
+                    <label for="repairStatus">Repair Status</label>
+                    <select class="custom-select" id="repairStatus" name="repairStatus">
+                        <#if repairStatus??>
+                            <#list repairStatus as repairStatus>
+                                <option value="${repairStatus}"<#if repair.repairStatus == repairStatus> selected</#if>>${repairStatus}</option>
+                            </#list>
+                        </#if>
                     </select>
-                    <label for="validationServer04">Type of repair</label>
-                    <select class="custom-select" id="validationServer04" required>
-                        <option selected disabled value="">choose</option>
-                        <option>Painting</option>
-                        <option>Insulation</option>
-                        <option>Plumbing works</option>
-                        <option>Electrical works</option>
+
+                    <label for="repairType">Repair type</label>
+                    <select class="custom-select" id="repairType" name="repairType">
+                        <#if repairType??>
+                            <#list repairTypes as repairType>
+                                <option value="${repairType}"<#if repair.repairType == repairType> selected</#if>>${repairType}</option>
+                            </#list>
+                        </#if>
                     </select>
-                    <label for="validationServer02">Cost</label>
-                    <input type="text" class="form-control" id="validationServer02" value="3.000" required>
-                    <label for="validationServer02">Address</label>
-                    <input type="text" class="form-control" id="validationServer02" value="1234 Main St, Athens, Greece" required>
-                    <label for="validationServer02">Owner's social security number</label>
-                    <input type="text" class="form-control" id="validationServer02" value="123456789" required>
-                    <div class="mb-3">
-                        <label for="validationTextarea">Description</label>
-                        <textarea class="form-control" id="validationTextarea" placeholder="Description" required></textarea>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Update</button>
+
+                    <label for="repairType">Repair type</label>
+                    <select class="custom-select" id="repairType" name="repairType">
+                        <#if repairTypes??>
+                            <#list repairTypes as repairType>
+                                <option value="${repairType}"<#if repair.repairType == repairType> selected</#if>>${repairType}</option>
+                            </#list>
+                        </#if>
+                    </select>
+
+                    <label for="cost">Cost</label>
+                    <input type="text" class="form-control" id="cost" name="cost" value="${repair.cost}">
+
+                    <label for="repairAddress">Repair Address</label>
+                    <input type="text" class="form-control" id="repairAddress" name="repairAddress" value="${repair.repairAddress}">
+
+                    <label for="owner">Owner's social security number</label>
+                    <input type="text" class="form-control" id="owner" name="owner SSN" value="${repair.owner}">
+
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" value="${repair.description}">
+
+                    <button class="btn btn-primary" type="submit">Update Repair</button>
                 </form>
             </div>
 

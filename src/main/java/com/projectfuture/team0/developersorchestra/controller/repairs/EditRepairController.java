@@ -23,7 +23,7 @@ public class EditRepairController {
     @PostMapping(value = "repairs/{repairID}/delete")
     public String deleteRepair(@PathVariable Long repairID) {
         repairService.deleteById(repairID);
-        return "";
+        return "redirect:/repairs/home";
     }
 
     @GetMapping(value = "repairs/{repairID}/edit")
@@ -32,12 +32,12 @@ public class EditRepairController {
         model.addAttribute(REPAIR_ATTR, repairModel);
         model.addAttribute(REPAIR_TYPES, RepairType.values());
         model.addAttribute(REPAIR_STATUS, RepairStatus.values());
-        return "";
+        return "repairs/editRepair";
     }
 
     @PostMapping(value = "repairs/edit")
     public String editRepair(RepairModel repairModel) {
         repairService.updateRepair(repairModel);
-        return "";
+        return "redirect:/repairs/home";
     }
 }

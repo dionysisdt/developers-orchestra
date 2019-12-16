@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,48 +80,70 @@
 
             <h2>Create Repair</h2>
             <div class="table-responsive px-2 py-2">
-                <form class="needs-validation" novalidate>
+                <form action="/repairs/create" name="repairsForm" method="POST">
 
-                    <label for="datefield">Date</label>
-                    <div class="input-group mb-2 mr-sm-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><span data-feather="calendar"></span></div>
-                        </div>
-                        <input type="date" class="form-control" id="datefield" required>
-                    </div>
+                    <label for="date">Date</label>
+                    <@spring.bind "repairsForm.date"/>
+                    <input type="date" class="form-control" id="date" name="date" placeholder="Date" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer02">Status</label>
-                    <select class="custom-select" id="validationServer02" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>Pending</option>
-                        <option>In progress</option>
-                        <option>Finished</option>
+                    <label for="repairStatus">Repair Status</label>
+                    <@spring.bind "repairsForm.repairStatus"/>
+                    <select class="custom-select" id="repairStatus" name="repairStatus" required>
+                        <#if repairStatus??>
+                            <#list repairStatus as repairStatus>
+                                <option value="${repairStatus}">${repairStatus}</option>
+                            </#list>
+                        </#if>
                     </select>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer03">Type of repair</label>
-                    <select class="custom-select" id="validationServer03" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>Painting</option>
-                        <option>Insulation</option>
-                        <option>Plumbing works</option>
-                        <option>Electrical works</option>
+                    <label for="repairType">Type of repair</label>
+                    <@spring.bind "repairsForm.repairType"/>
+                    <select class="custom-select" id="repairType" name="repairType" required>
+                        <#if repairTypes??>
+                            <#list repairTypes as repairType>
+                                <option value="${repairType}">${repairType}</option>
+                            </#list>
+                        </#if>
                     </select>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer04">Cost</label>
-                    <input type="text" class="form-control" id="validationServer04" placeholder="Cost" required>
+                    <label for="cost">Cost</label>
+                    <@spring.bind "repairsForm.cost"/>
+                    <input type="text" class="form-control" id="cost" name="cost" placeholder="Cost" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer05">Address</label>
-                    <input type="text" class="form-control" id="validationServer05" placeholder="Address" required>
+                    <label for="repairAddress">Repair Address</label>
+                    <@spring.bind "repairsForm.repairAddress"/>
+                    <input type="text" class="form-control" id="repairAddress" name="repairAddress" placeholder="Address" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <label for="validationServer06">Owner's social security number</label>
-                    <input type="text" class="form-control" id="validationServer06" placeholder="Owner's social security number" required>
+                    <label for="owner">Owner's TaxID</label>
+                    <@spring.bind "repairsForm.ownerTaxId"/>
+                    <input type="text" class="form-control" id="owner" name="ownerTaxId" placeholder="Owner's TaxID" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <div class="mb-3">
-                        <label for="validationTextarea">Description</label>
-                        <textarea class="form-control" id="validationTextarea" placeholder="Description" required></textarea>
-                    </div>
+                    <label for="description">Description</label>
+                    <@spring.bind "repairsForm.description"/>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Description" required>
+                    <#list spring.status.errorMessages as error>
+                        <span>${error}</span>
+                    </#list>
 
-                    <button class="btn btn-primary" type="submit">Create</button>
+                    <button class="btn btn-primary" type="submit">Create Repair</button>
                 </form>
             </div>
 

@@ -4,16 +4,13 @@ import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.enums.RepairType;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 public class RepairForm {
 
     private Long repairID;
 
     private RepairStatus repairStatus;
 
-    private Date date;
+    private String date;
 
     private RepairType repairType;
 
@@ -23,7 +20,7 @@ public class RepairForm {
 
     private String repairAddress;
 
-    private Owner owner;
+    private String ownerTaxId;
 
     public RepairStatus getRepairStatus() {
         return repairStatus;
@@ -33,11 +30,11 @@ public class RepairForm {
         this.repairStatus = repairStatus;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -73,12 +70,12 @@ public class RepairForm {
         this.repairAddress = repairAddress;
     }
 
-    public Owner getOwner() {
-        return owner;
+    public String getOwnerTaxId() {
+        return ownerTaxId;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public void setOwnerTaxId(String ownerTaxId) {
+        this.ownerTaxId = ownerTaxId;
     }
 
     public Long getRepairID() {
