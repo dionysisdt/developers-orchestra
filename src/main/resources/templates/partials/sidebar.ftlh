@@ -19,7 +19,7 @@
                 </li>
 
                 <li>
-                    <a href=http://justinfarrow.com">
+                    <a href="http://justinfarrow.com">
                         <i class="fa fa-cubes fa-2x"></i>
                         <span class="nav-text">Properties</span>
                     </a>
