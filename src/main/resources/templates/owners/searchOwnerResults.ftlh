@@ -56,18 +56,15 @@
                             <td>${owner.email}</td>
                             <td>${owner.phoneNumber}</td>
                             <td>${owner.propertyType}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/admin/owner/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
                             <td class="text-center">
-
-                                <button
-                                        class="btn btn-link"
-                                        data-toggle="modal"
-                                        data-target="#modal"
-                                        data-id="${owner.ownerID}"
-                                >
+                                <a href="/admin/owner/${owner.ownerID}/edit" title="Edit Owner">
+                                    <span data-feather="edit-3"></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-link" data-toggle="modal" data-target="#modal" data-id="${owner.ownerID}">
                                     <span data-feather="x"></span>
                                 </button>
-
                             </td>
                         </tr>
                     </#list>
@@ -76,17 +73,20 @@
 
                 </table>
 
-                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                Confirm Delete
+                                <h5 class="modal-title">Owner</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
                                 Are you sure you want to delete the record?
                             </div>
                             <div class="modal-footer">
-                                <form method="post" id="deleteForm">
+                                <form method="post" id="deleteOwnerForm">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 </form>
@@ -105,15 +105,11 @@
                     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
                     <script>
                         feather.replace();
-
-                        $('#confirm-delete').on('show.bs.modal', function(e) {
-                            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-                        });
-
                     </script>
+                    <script src="/js/main.js"></script>
                     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                    <script>window.jQuery || document.write('<script src="static/js/jquery.slim.min.js"><\/script>')</script>
-                    <script src="static/js/bootstrap.bundle.min.js"></script>
+                    <script>window.jQuery || document.write('<script src="/js/jquery.slim.min.js"><\/script>')</script>
+                    <script src="/js/bootstrap.bundle.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
                     <script src="/js/dashboard.js"></script>
