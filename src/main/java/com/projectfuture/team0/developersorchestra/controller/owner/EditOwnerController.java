@@ -19,11 +19,10 @@ public class EditOwnerController {
     @Autowired
     private OwnerService ownerService;
 
-    @PostMapping(value = "admin/{ownerID}/delete")
+    @PostMapping(value = "/admin/{ownerID}/delete")
     public String deleteOwner(@PathVariable Long ownerID) {
         ownerService.deleteByOwnerID(ownerID);
-        return "redirect:/owner/home";
-        //return "redirect:/admin/home";
+        return "redirect:/admin/home";
     }
 
     @GetMapping(value = "/admin/{ownerID}/edit")
@@ -37,8 +36,7 @@ public class EditOwnerController {
     @PostMapping(value = "/admin/edit")
     public String editOwner(OwnerModel ownerModel) {
         ownerService.updateOwner(ownerModel);
-        return "redirect:/owner/home";
-        //return "redirect:/admin/home";
+        return "redirect:/admin/home";
     }
 
 }

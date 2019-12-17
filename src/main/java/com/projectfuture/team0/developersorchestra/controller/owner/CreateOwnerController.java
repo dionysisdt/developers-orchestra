@@ -53,8 +53,7 @@ public class CreateOwnerController {
 
             Owner owner = mapper.toOwner(ownerForm);
             ownerService.createOwner(owner);
-            return "redirect:/homepages/admin";
-            //return "redirect:/admin/home";
+            return "redirect:/admin/home";
         }
 
 }
