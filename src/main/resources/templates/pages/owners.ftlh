@@ -8,9 +8,10 @@
 </head>
 
 <body>
-<#include "../partials/sidebar.ftlh">
+<#include "../partials/nav.ftlh">
+<div class="d-flex">
+    <#include "../partials/sidebar.ftlh">
 
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="flex-grow-1">
         <div class="content-cnt">
             <h2>Owners</h2>
@@ -43,14 +44,14 @@
                             <td>${owner.phoneNumber}</td>
                             <td>${owner.propertyType}</td>
                             <td class="text-center">
-                                <a href="/admin/{ownerID}/edit" title="Edit Owner">
+                                <a href="/admin/${owner.ownerID}/edit" title="Edit Owner">
                                     <span data-feather="edit-3"></span>
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="#" data-href="/admin/{ownerID}/delete" data-toggle="modal"
+                                <a href="#" data-href="/admin/${owner.ownerID}/delete" data-toggle="modal"
                                    data-target="#confirm-delete">
-                                    <a href="#" data-href="/admin/{ownerID}/delete" data-toggle="modal"
+                                    <a href="#" data-href="/admin/${owner.ownerID}/delete" data-toggle="modal"
                                        data-target="#confirm-delete">
                                         <span data-feather="trash-2"></span>
                                     </a>
@@ -82,14 +83,10 @@
             </div>
         </div>
     </div>
-</main>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-    feather.replace();
+</div>
 
+<#include "../partials/scripts.ftlh">
+<script>
     $('#confirm-delete').on('show.bs.modal', function (e) {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
