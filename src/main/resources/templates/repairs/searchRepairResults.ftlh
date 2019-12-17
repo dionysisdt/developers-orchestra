@@ -125,15 +125,16 @@
                     </thead>
 
                     <tbody>
+                    <#list repairs as repair>
                     <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#08</a></td>
-                        <td>03/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
+                        <td><a href="./edit-customer.html" title="Edit Customer">${repair.repairID}</a></td>
+                        <td>${repair.date}</td>
+                        <td>${repair.repairStatus}</td>
+                        <td>${repair.repairType}</td>
+                        <td>${repair.cost}</td>
+                        <td>${repair.repairAddress}</td>
+                        <td>${repair.owner.taxID}</td>
+                        <td>${repair.description}</td>
                         <td class="text-center">
                             <a href="./edit-customer.html" title="Edit Customer">
                                 <span data-feather="edit-3"></span>
@@ -145,6 +146,7 @@
                             </a>
                         </td>
                     </tr>
+                    </#list>
                     </tbody>
 
                 </table>

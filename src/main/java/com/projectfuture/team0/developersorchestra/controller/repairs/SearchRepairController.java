@@ -26,13 +26,13 @@ public class SearchRepairController {
     @Autowired
     private RepairService repairService;
 
-    @GetMapping(value = "/admin/search/repairs")
+    @GetMapping(value = "/admin/repair/search")
     public String searchRepair(ModelMap modelMap) {
         modelMap.addAttribute("searchRepairForm", new SearchRepairForm());
         return "repairs/searchRepairs";
     }
 
-    @PostMapping(value = "/admin/search/repairs")
+    @PostMapping(value = "/admin/repair/search")
     public String searchRepair(@ModelAttribute("searchRepairForm") SearchRepairForm searchRepairForm, ModelMap modelMap) {
 
         //Date date = Date.parse(searchRepairForm.getDate(),

@@ -1,3 +1,4 @@
+<#import "/spring.ftl" as spring />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,246 +87,73 @@
                         <th>Type</th>
                         <th>Cost</th>
                         <th>Address</th>
-                        <th>Owner's social security number</th>
+                        <th>Owner's TaxID</th>
                         <th>Description</th>
                         <th class="text-center">Edit</th>
                         <th class="text-center">Remove</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#01</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#02</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#03</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#04</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#05</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#06</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#07</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#08</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#09</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="./edit-customer.html" title="Edit Customer">#10</a></td>
-                        <td>01/01/2019</td>
-                        <td>In progress</td>
-                        <td>Painting</td>
-                        <td>3,000</td>
-                        <td>1234 Main St, Athens, Greece</td>
-                        <td>123456789</td>
-                        <td>Installation of solar water heaters</td>
-                        <td class="text-center">
-                            <a href="./edit-customer.html" title="Edit Customer">
-                                <span data-feather="edit-3"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#" data-href="delete.php?id=ΧΧΧ" data-toggle="modal" data-target="#confirm-delete">
-                                <span data-feather="trash-2"></span>
-                            </a>
-                        </td>
-                    </tr>
+                    <#if repairs??>
+                    <#list repairs as repair>
+                        <tr data-id="${repair.repairID}">
+                            <td>${repair.date}</td>
+                            <td>${repair.repairStatus}</td>
+                            <td>${repair.repairType}</td>
+                            <td>${repair.cost}</td>
+                            <td>${repair.repairAddress}</td>
+                            <td>${repair.owner.taxID}</td>
+                            <td>${repair.description}</td>
+                            <td class="text-center">
+                                <a href="/admin/repair/${repair.repairID}/edit" title="Edit Repair">
+                                    <span data-feather="edit-3"></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-link" data-toggle="modal" data-target="#modal" data-id="${repair.repairID}">
+                                    <span data-feather="x"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </#list>
+                    </#if>
                     </tbody>
                 </table>
+                <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Repair</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">x</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the record?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteRepairForm">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>
 </div>
-<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                Confirm Delete
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete the record?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok text-white">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
     feather.replace();
-
-    $('#confirm-delete').on('show.bs.modal', function(e) {
-        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-    });
 </script>
+
 </body>
 
 </html>
