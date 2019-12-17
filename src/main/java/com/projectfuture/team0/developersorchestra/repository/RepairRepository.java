@@ -30,6 +30,4 @@ public interface RepairRepository extends JpaRepository<Repair, Long> {
 
     List<Repair> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
 
-    List<Repair> getAllRepairs();
-
 }
