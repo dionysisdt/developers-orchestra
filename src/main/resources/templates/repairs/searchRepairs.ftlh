@@ -90,7 +90,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-            <form class="form-inline" action="admin/search/repair" name="searchRepairForm" method="POST">
+            <form class="form-inline" action="/admin/search/repairs" name="searchRepairForm" method="POST">
 
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
@@ -103,7 +103,7 @@
                 <input type="text" class="form-control mb-2 mr-sm-2" id="taxID" name="taxID" placeholder="TaxID">
 
                 <button type="Submit" class="btn btn-primary mb-2">Search</button>
-
+            </form>
         </main>
     </div>
 </div>

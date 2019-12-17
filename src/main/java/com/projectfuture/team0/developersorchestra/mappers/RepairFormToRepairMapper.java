@@ -28,7 +28,7 @@ public class RepairFormToRepairMapper {
         repair.setDescription(repairForm.getDescription());
         repair.setRepairAddress(repairForm.getRepairAddress());
 
-        //repair.setDate(repairForm.getDate());
+        repair.setDate(repairForm.getDate());
         repair.setOwner(ownerService.findByTaxID(repairForm.getOwnerTaxId()).get());
 
         //repair.setOwner(ownerByOwnerID);

@@ -20,19 +20,19 @@ public class EditRepairController {
     @Autowired
     private RepairService repairService;
 
-    @PostMapping(value = "repairs/{repairID}/delete")
+    @PostMapping(value = "/repairs/delete")
     public String deleteRepair(@PathVariable Long repairID) {
         repairService.deleteById(repairID);
         return "redirect:/repairs/home";
     }
 
-    @GetMapping(value = "repairs/{repairID}/edit")
+    @GetMapping(value = "/repairs/edit")
     public String editRepair(@PathVariable Long repairID, Model model) {
         RepairModel repairModel = repairService.findByRepairID(repairID).get();
         model.addAttribute(REPAIR_ATTR, repairModel);
         model.addAttribute(REPAIR_TYPES, RepairType.values());
         model.addAttribute(REPAIR_STATUS, RepairStatus.values());
-        return "repairs/editRepair";
+        return "repairs/editRepairs";
     }
 
     @PostMapping(value = "repairs/edit")

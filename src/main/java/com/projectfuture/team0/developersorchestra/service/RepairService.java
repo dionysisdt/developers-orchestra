@@ -6,6 +6,7 @@ import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,4 +31,7 @@ public interface RepairService {
     List<RepairModel> findByRepairAddress(String repairAddress);
 
     Optional<RepairModel> findByRepairID(Long repairID);
+
+    List<RepairModel> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
+
 }

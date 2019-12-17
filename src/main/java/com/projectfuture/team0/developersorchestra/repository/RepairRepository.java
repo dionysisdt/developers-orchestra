@@ -28,4 +28,6 @@ public interface RepairRepository extends JpaRepository<Repair, Long> {
 
     List<Repair> findByRepairAddress(String repairAddress);
 
+    List<Repair> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
+
 }
