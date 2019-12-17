@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -20,9 +20,8 @@
                     <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email">
                 </div>
 
-                <label class="sr-only" for="inlineFormInputName2">social security number</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
-                       placeholder="social security number">
+                <label class="sr-only" for="inlineFormInputName2">TaxID</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="TaxID">
 
                 <button type="Search" class="btn btn-primary mb-2">Search</button>
 
@@ -59,7 +58,7 @@
                                 <td>${owner.phoneNumber}</td>
                                 <td>${owner.propertyType}</td>
                                 <td class="text-center"><a class="btn btn-link"
-                                                           href="/admin/${owner.ownerID}/edit"><span
+                                                           href="/admin/owner/${owner.ownerID}/edit"><span
                                                 data-feather="tool"></span></a></td>
                                 <td class="text-center">
 
@@ -85,13 +84,16 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                Confirm Delete
+                                <h5 class="modal-title">Owner</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
                                 Are you sure you want to delete the record?
                             </div>
                             <div class="modal-footer">
-                                <form method="post" id="deleteForm">
+                                <form method="post" id="deleteOwnerForm">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 </form>

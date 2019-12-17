@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -16,11 +16,11 @@
         <div class="content-cnt">
             <h2>Edit Owner</h2>
             <div class="table-responsive">
-                <form action="/admin/edit" method="POST">
+                <form action="/admin/owner/edit" method="POST">
 
                     <input type="hidden" name="ownerID" value="${owner.ownerID}">
 
-                    <label for="taxID">Social security number </label>
+                    <label for="taxID">TaxID</label>
                     <input type="text" class="form-control" id="taxID" name="taxID" value="${owner.taxID}">
 
                     <div class="form-row">

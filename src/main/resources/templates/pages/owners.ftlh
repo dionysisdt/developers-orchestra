@@ -4,7 +4,7 @@
 
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -33,8 +33,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <#if owners??>
                     <#list owners as owner>
-                        <tr>
+                        <tr data-id="${owner.ownerID}">
                             <td>${owner.ownerID}</td>
                             <td>${owner.taxID}</td>
                             <td>${owner.firstName}</td>
@@ -44,7 +45,7 @@
                             <td>${owner.phoneNumber}</td>
                             <td>${owner.propertyType}</td>
                             <td class="text-center">
-                                <a href="/admin/${owner.ownerID}/edit" title="Edit Owner">
+                                <a href="/admin/owner/${owner.ownerID}/edit" title="Edit Owner">
                                     <span data-feather="edit-3"></span>
                                 </a>
                             </td>
@@ -59,6 +60,7 @@
                             </td>
                         </tr>
                     </#list>
+                    </#if>
                     </tbody>
                 </table>
             </div>
@@ -91,6 +93,7 @@
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
 </script>
+<script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -120,8 +120,18 @@ jquery(function ($) {
             return (false)
         }
 
-    })(jquery);
+    })(jQuery);
 
+
+    $('#modal').on('show.bs.modal', function (event) {
+        const ownerID = event.relatedTarget.dataset.id;
+        $('#deleteOwnerForm').attr('action', `/admin/owner/${ownerID}/delete`);
+        $('.modal-title').text(function () {
+            return `Owner #${ownerID}`;
+        });
+    });
+
+    /*
     $('#modal').on('show.bs.modal', function (event) {
         const repairID = event.relatedTarget.dataset.id;
         $('#deleteRepairForm').attr('action', `/admin/repair/${repairID}/delete`);
@@ -129,5 +139,5 @@ jquery(function ($) {
             return `Repair #${repairID}`;
         });
     });
-
+    */
 });
