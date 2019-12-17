@@ -1,5 +1,5 @@
 
-(function ($) {
+jQuery(function ($) {
     "use strict";
 
 
@@ -121,4 +121,15 @@
         }
 
     })(jQuery);
-})
+
+
+    $('#modal').on('show.bs.modal', function (event) {
+        const ownerID = event.relatedTarget.dataset.id;
+        $('#deleteOwnerForm').attr('action', `/admin/owner/${ownerID}/delete`);
+        $('.modal-title').text(function () {
+            return `Owner #${ownerID}`;
+        });
+    });
+
+
+});

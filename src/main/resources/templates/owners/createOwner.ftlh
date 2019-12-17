@@ -5,7 +5,7 @@
 
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -15,9 +15,9 @@
 
             <h2>Create Owner</h2>
             <div class="table-responsive px-2 py-2">
-                <form action="/admin/create" name="ownersForm" method="POST">
+                <form action="/admin/owner/create" name="ownersForm" method="POST">
 
-                    <label for="taxID">Social security number </label>
+                    <label for="taxID">TaxID </label>
                     <@spring.bind "ownersForm.taxID"/>
                     <input type="text" class="form-control" id="taxID" name="taxID" placeholder="TaxID" required>
                     <#list spring.status.errorMessages as error>
@@ -92,7 +92,7 @@
                             </label>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <button class="btn btn-primary" type="submit">Create Owner</button>
                 </form>
             </div>
         </main>

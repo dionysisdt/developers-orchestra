@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                     <tbody>
                     <#list repairs as repair>
                         <tr>
-                            <td><a href="./edit-customer.html" title="Edit Customer">#${repair.repairID}</a></td>
+                            <td><a href="./edit-customer.html" title="Edit Owner">#${repair.repairID}</a></td>
                             <td>${repair.date}</td>
                             <td>${repair.repairStatus}</td>
                             <td>${repair.repairType}</td>
@@ -49,12 +49,12 @@
                             <td>${repair.owner.firstName} ${repair.owner.lastName}</td>
                             <td>${repair.description}</td>
                             <td class="text-center">
-                                <a href="./edit-customer.html" title="Edit Customer">
+                                <a href="./edit-customer.html" title="Edit Owner">
                                     <span data-feather="edit-3"></span>
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="./edit-customer.html" title="Remove Customer">
+                                <a href="./edit-customer.html" title="Remove Owner">
                                     <span data-feather="trash-2"></span>
                                 </a>
                             </td>
@@ -79,7 +79,7 @@
 <script src="static/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script src="static/js/dashboard.js"></script></body>
+<script src="static/js/dashboard.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/ 1.19.0/jquery.validate.min.js"></script>
 </body>
 </html>

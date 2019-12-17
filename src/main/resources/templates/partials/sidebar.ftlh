@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
 
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
-        <span>Developer Orchestra</span>
+        <span>Developers Orchestra</span>
     </a>
 
 </nav>
@@ -12,56 +12,35 @@
         <nav class="main-menu">
             <ul>
                 <li>
-                    <a href="http://justinfarrow.com">
+                    <a href="/admin/home">
                         <i class="fa fa-truck-monsterfa-2x"></i>
                         <span class="nav-text">Home</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="http://justinfarrow.com">
-                        <i class="fa fa-cubes fa-2x"></i>
-                        <span class="nav-text">Properties</span>
-                    </a>
-                </li>
-
                 <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-plus-square fa-2x"></i>
-                        <span class="nav-text">Create Property</span>
-                    </a>
-                </li>
-
-                <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-pencil-alt fa-2x"></i>
-                        <span class="nav-text">Edit Property</span>
-                    </a>
-                </li>
-
-                <li class="has-subnav">
-                    <a href="#">
+                    <a href="/admin/owners">
                         <i class="fa fa-user-cog fa-2x"></i>
-                        <span class="nav-text">Owner</span>
+                        <span class="nav-text">Property Owners</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="/admin/owner/create">
                         <i class="fa fa-plus-square fa-2x"></i>
                         <span class="nav-text">Create Owner</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="/admin/owner/{ownerID}/edit">
                         <i class="fa fa-pencil-alt fa-2x"></i>
                         <span class="nav-text">Edit Owner</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="/admin/owner/search">
                         <i class="fa fa-search fa-2x"></i>
                         <span class="nav-text">Search Owner</span>
                     </a>

@@ -4,24 +4,22 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
 <#include "../partials/sidebar.ftlh">
 
-    </div>
-    </nav>
     <div class="w3-row-padding">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-            <h2>Create Owner</h2>
+            <h2>Edit Owner</h2>
             <div class="table-responsive">
-                <form action="/admin/edit" method="POST">
+                <form action="/admin/owner/edit" method="POST">
 
                     <input type="hidden" name="ownerID" value="${owner.ownerID}">
 
-                    <label for="taxID">Social security number </label>
+                    <label for="taxID">TaxID</label>
                     <input type="text" class="form-control" id="taxID" name="taxID" value="${owner.taxID}">
 
                     <div class="form-row">
@@ -70,7 +68,7 @@
 
         </main>
     </div>
-</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

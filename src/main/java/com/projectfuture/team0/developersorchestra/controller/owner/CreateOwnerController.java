@@ -31,7 +31,7 @@ public class CreateOwnerController {
         @Autowired
         private OwnerFormToOwnerMapper mapper;
 
-        @GetMapping(value = "/admin/create")
+        @GetMapping(value = "/admin/owner/create")
         public String ownersDynamic(Model model) {
 
             model.addAttribute(OWNERS_FORM, new OwnerForm());
@@ -39,7 +39,7 @@ public class CreateOwnerController {
             return "owners/createOwner";
         }
 
-        @PostMapping(value = "/admin/create")
+        @PostMapping(value = "/admin/owner/create")
         public String createOwners(Model model,
                                   @Valid @ModelAttribute(OWNERS_FORM)
                                           OwnerForm ownerForm,

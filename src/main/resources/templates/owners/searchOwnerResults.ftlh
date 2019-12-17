@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -19,8 +19,8 @@
                     <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email">
                 </div>
 
-                <label class="sr-only" for="inlineFormInputName2">social security number</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="social security number">
+                <label class="sr-only" for="inlineFormInputName2">TaxID</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="TaxID">
 
                 <button type="Search" class="btn btn-primary mb-2">Search</button>
 
@@ -48,7 +48,7 @@
                     <#if owners??>
                     <#list owners as owner>
                         <tr data-id="${owner.ownerID}">
-                            <td><a href="/admin/${owner.ownerID}/edit">#${owner.ownerID}</a></td>
+                            <td><a href="/admin/owner/${owner.ownerID}/edit">#${owner.ownerID}</a></td>
                             <td>${owner.taxID}</td>
                             <td>${owner.firstName}</td>
                             <td>${owner.lastName}</td>
@@ -56,7 +56,7 @@
                             <td>${owner.email}</td>
                             <td>${owner.phoneNumber}</td>
                             <td>${owner.propertyType}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/admin/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
+                            <td class="text-center"><a class="btn btn-link" href="/admin/owner/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
                             <td class="text-center">
 
                                 <button
