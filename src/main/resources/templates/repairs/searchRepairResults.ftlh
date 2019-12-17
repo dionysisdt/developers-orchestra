@@ -3,10 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#000048">
+    <#include "../partials/head.ftlh">
     <title>Developer Orchestra</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -15,75 +12,11 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+<#include "../partials/sidebar.ftlh">
 
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
-        <span>Developer Orchestra</span>
-    </a>
-
-</nav>
-
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./AdminHome.html">
-                            <span data-feather="truck"></span>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./Owners.html">
-                            <span data-feather="users"></span>
-                            Property Owners
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./Repairs.html">
-                            <span data-feather="tool"></span>
-                            Repairs
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./SearchRepairs.html">
-                            <span data-feather="tool"></span>
-                            Search repairs <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./CreateRepair.html">
-                            <span data-feather="plus-square"></span>
-                            Create Repair
-                        </a>
-                    </li>
-
-                </ul>
-
-
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>USER</span>
-                    <a class="d-flex align-items-center text-muted" href="#">
-                        <span data-feather="user"></span>
-                    </a>
-                </h6>
-
-
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./login.html">
-                            <span data-feather="log-out"></span>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="flex-grow-1">
+        <div class="content-cnt">
             <form class="form-inline">
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
@@ -151,9 +84,10 @@
 
                 </table>
             </div>
-        </main>
+        </div>
     </div>
-</div>
+</main>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

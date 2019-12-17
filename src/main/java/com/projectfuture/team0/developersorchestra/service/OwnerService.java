@@ -33,4 +33,6 @@ public interface OwnerService {
 
     List<OwnerModel> findOwnerByOwnerAddress(String ownerAddress);
 
+    List<OwnerModel> findOwnerByTaxIDOrEmail(String taxID, String email);
+
 }
