@@ -31,7 +31,7 @@
     bottom:0;
     left:0;
     width:60px;
-    min-height: 100vh;
+    min-height: calc(100vh - 48px);
     overflow:hidden;
     -webkit-transition:width .05s linear;
     transition:width .05s linear;
