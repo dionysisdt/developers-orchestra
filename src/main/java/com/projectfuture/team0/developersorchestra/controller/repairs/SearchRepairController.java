@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -33,11 +35,25 @@ public class SearchRepairController {
     @PostMapping(value = "/admin/search/repairs")
     public String searchRepair(@ModelAttribute("searchRepairForm") SearchRepairForm searchRepairForm, ModelMap modelMap) {
 
-        Date date = Date.parse(searchRepairForm.getDate(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        //Date date = Date.parse(searchRepairForm.getDate(),
+        //        DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        //Date date = new Date();
 
-        List<RepairModel> repairs = repairService.findRepairsByOwnerTaxIDOrDate(searchRepairForm.getOwner().getTaxID(), searchRepairForm.getDate());
 
+        String taxId = "";
+        if(searchRepairForm.getOwner() != null) {
+            taxId = searchRepairForm.getOwner().getTaxID();
+        }
+
+        Date date = new Date();
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            date = formatter.parse(searchRepairForm.getDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        List<RepairModel> repairs = repairService.findRepairsByOwnerTaxIDOrDate(taxId, date);
         if (!repairs.isEmpty()) {
             modelMap.addAttribute(REPAIRS_LIST, repairs);
         }

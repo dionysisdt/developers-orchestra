@@ -6,15 +6,15 @@ import java.util.Date;
 
 public class SearchRepairForm {
 
-    private Date date;
+    private String date;
 
     private Owner owner;
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
