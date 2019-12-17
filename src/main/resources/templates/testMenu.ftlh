@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Project</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="/css/dashboard.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="/css/side.css">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/side.css">
 </head>
 
 <body>
@@ -28,37 +28,85 @@
             <ul>
                 <li>
                     <a href="http://justinfarrow.com">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">Dashboard</span>
+                        <i class="fa fa-truck-monsterfa-2x"></i>
+                        <span class="nav-text">Home</span>
                     </a>
                 </li>
 
-                <li class="has-subnav">
-                    <a class="nav-link active" href="./AdminHome.html">
-                        <i class="fa fa-laptop fa-2x"></i>
-                        <span class="nav-text">
-                            <span data-feather="truck"></span> Home</span>
-                    </a>
-                </li>
-
-                <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-list fa-2x"></i>
-                        <span class="nav-text">Forms</span>
+                <li>
+                    <a href=http://justinfarrow.com">
+                        <i class="fa fa-cubes fa-2x"></i>
+                        <span class="nav-text">Properties</span>
                     </a>
                 </li>
 
                 <li class="has-subnav">
                     <a href="#">
-                        <i class="fa fa-folder-open fa-2x"></i>
-                        <span class="nav-text">Pages</span>
+                        <i class="fa fa-plus-square fa-2x"></i>
+                        <span class="nav-text">Create Property</span>
+                    </a>
+                </li>
+
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-pencil-alt fa-2x"></i>
+                        <span class="nav-text">Edit Property</span>
+                    </a>
+                </li>
+
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-user-cog fa-2x"></i>
+                        <span class="nav-text">Owner</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
-                        <span class="nav-text">Graphs and Statistics</span>
+                        <i class="fa fa-plus-square fa-2x"></i>
+                        <span class="nav-text">Create Owner</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-pencil-alt fa-2x"></i>
+                        <span class="nav-text">Edit Owner</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-search fa-2x"></i>
+                        <span class="nav-text">Search Owner</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-screwdriver fa-2x"></i>
+                        <span class="nav-text">Repairs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-plus-square fa-2x"></i>
+                        <span class="nav-text">Create Repair</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-pencil-alt fa-2x"></i>
+                        <span class="nav-text">Edit Repair</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-search fa-2x"></i>
+                        <span class="nav-text">Search Repair</span>
                     </a>
                 </li>
 
@@ -305,7 +353,7 @@
 <script>window.jQuery || document.write('<script src="js/jquery.slim.min.js"><\/script>')</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script src="/js/dashboard.js"></script>
-<script src="/js/side.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/side.js"></script>
 </body>
 </html>
