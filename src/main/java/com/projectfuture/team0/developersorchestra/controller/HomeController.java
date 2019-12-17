@@ -41,6 +41,7 @@ public class HomeController {
 
     @GetMapping(value = "/owner/home")
     public String repairs(Model model) {
+        SecurityContextHolder.getContext().getAuthentication().getName();
         List<RepairModel> repairs = repairService.findAll();
         model.addAttribute(REPAIRS_LIST, repairs);
         return "homepages/owner";
