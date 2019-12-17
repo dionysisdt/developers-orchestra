@@ -8,8 +8,9 @@
 
 <body>
 <#include "../partials/sidebar.ftlh">
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="flex-grow-1">
+        <div class="content-cnt">
             <form class="form-inline">
 
                 <div class="input-group mb-2 mr-sm-2">
@@ -20,7 +21,8 @@
                 </div>
 
                 <label class="sr-only" for="inlineFormInputName2">social security number</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="social security number">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+                       placeholder="social security number">
 
                 <button type="Search" class="btn btn-primary mb-2">Search</button>
 
@@ -46,37 +48,40 @@
                     </thead>
                     <tbody>
                     <#if owners??>
-                    <#list owners as owner>
-                        <tr data-id="${owner.ownerID}">
-                            <td><a href="/admin/${owner.ownerID}/edit">#${owner.ownerID}</a></td>
-                            <td>${owner.taxID}</td>
-                            <td>${owner.firstName}</td>
-                            <td>${owner.lastName}</td>
-                            <td>${owner.ownerAddress}</td>
-                            <td>${owner.email}</td>
-                            <td>${owner.phoneNumber}</td>
-                            <td>${owner.propertyType}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/admin/${owner.ownerID}/edit"><span data-feather="tool"></span></a></td>
-                            <td class="text-center">
+                        <#list owners as owner>
+                            <tr data-id="${owner.ownerID}">
+                                <td><a href="/admin/${owner.ownerID}/edit">#${owner.ownerID}</a></td>
+                                <td>${owner.taxID}</td>
+                                <td>${owner.firstName}</td>
+                                <td>${owner.lastName}</td>
+                                <td>${owner.ownerAddress}</td>
+                                <td>${owner.email}</td>
+                                <td>${owner.phoneNumber}</td>
+                                <td>${owner.propertyType}</td>
+                                <td class="text-center"><a class="btn btn-link"
+                                                           href="/admin/${owner.ownerID}/edit"><span
+                                                data-feather="tool"></span></a></td>
+                                <td class="text-center">
 
-                                <button
-                                        class="btn btn-link"
-                                        data-toggle="modal"
-                                        data-target="#modal"
-                                        data-id="${owner.ownerID}"
-                                >
-                                    <span data-feather="x"></span>
-                                </button>
+                                    <button
+                                            class="btn btn-link"
+                                            data-toggle="modal"
+                                            data-target="#modal"
+                                            data-id="${owner.ownerID}"
+                                    >
+                                        <span data-feather="x"></span>
+                                    </button>
 
-                            </td>
-                        </tr>
-                    </#list>
+                                </td>
+                            </tr>
+                        </#list>
                     </#if>
                     </tbody>
 
                 </table>
 
-                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -95,27 +100,30 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </div>
+</main>
 
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace();
 
-                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-                    <script>
-                        feather.replace();
+    $('#confirm-delete').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    });
 
-                        $('#confirm-delete').on('show.bs.modal', function(e) {
-                            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-                        });
-
-                    </script>
-                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                    <script>window.jQuery || document.write('<script src="static/js/jquery.slim.min.js"><\/script>')</script>
-                    <script src="static/js/bootstrap.bundle.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-                    <script src="static/js/dashboard.js"></script>
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="static/js/jquery.slim.min.js"><\/script>')</script>
+<script src="static/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="static/js/dashboard.js"></script>
 </body>
 </html>

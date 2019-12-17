@@ -7,29 +7,34 @@
 
 <body>
 <#include "../partials/sidebar.ftlh">
-    </div>
-    </nav>
-    <div class="w3-row-padding">
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 py-2 px-2">
 
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 py-2 px-2">
+    <div class="flex-grow-1">
+        <div class="content-cnt">
+            <div class="" w3-row-padding
+            ">
             <h2>Create Property</h2>
             <div class="table-responsive">
                 <form class="needs-validation px-2 py-2" novalidate>
 
                     <label for="validationServer01">Property number </label>
-                    <input type="text" class="form-control" id="validationServer01" placeholder="Property number" required>
+                    <input type="text" class="form-control" id="validationServer01" placeholder="Property number"
+                           required>
                     <div class="invalid-feedback">
                         Please enter a property number
                     </div>
 
                     <label for="validationServer02">Property address</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Property address" required>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Property address"
+                           required>
                     <div class="invalid-feedback">
                         Please enter property address
                     </div>
 
                     <label for="validationServer03">Year of manufacture</label>
-                    <input type="text" class="form-control" id="validationServer03" placeholder="Year of manufacture" required>
+                    <input type="text" class="form-control" id="validationServer03" placeholder="Year of manufacture"
+                           required>
                     <div class="invalid-feedback">
                         Please enter a valid year
                     </div>
@@ -47,7 +52,8 @@
                     </div>
 
                     <label for="validationServer05">Social security number </label>
-                    <input type="text" class="form-control" id="validationServer05" placeholder="Social security number" required>
+                    <input type="text" class="form-control" id="validationServer05" placeholder="Social security number"
+                           required>
                     <div class="invalid-feedback">
                         Please enter your social security number
                     </div>
@@ -55,10 +61,9 @@
                     <button class="btn btn-primary mt-4" type="submit">Create</button>
                 </form>
             </div>
-
-        </main>
+        </div>
     </div>
-</div>
+</main>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -68,14 +73,14 @@
 <script>
     feather.replace();
 
-    (function() {
+    (function () {
         'use strict';
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.getElementsByClassName('needs-validation');
             // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
                     if (form.checkValidity() === false) {
                         event.preventDefault();
                         event.stopPropagation();

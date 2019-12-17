@@ -8,9 +8,10 @@
 <body>
 <#include "../partials/sidebar.ftlh">
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-
+    <div class="flex-grow-1">
+        <div class="content-cnt">
 
             <form class="form-inline">
                 <div class="input-group mb-2 mr-sm-2">
@@ -27,7 +28,8 @@
                 </div>
 
                 <label class="sr-only" for="inlineFormInputName2">social security number</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="social security number">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+                       placeholder="social security number">
 
                 <button type="Search" class="btn btn-primary mb-2">Search</button>
 
@@ -52,9 +54,9 @@
                     </thead>
                 </table>
             </div>
-        </main>
+        </div>
     </div>
-</div>
+</main>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
