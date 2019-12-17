@@ -34,4 +34,6 @@ public interface RepairService {
 
     List<RepairModel> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
 
+    List<RepairModel> getAllRepairs();
+
 }

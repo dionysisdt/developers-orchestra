@@ -1,5 +1,5 @@
 
-jQuery(function ($) {
+jquery(function ($) {
     "use strict";
 
 
@@ -120,5 +120,14 @@ jQuery(function ($) {
             return (false)
         }
 
-    })(jQuery);
-})
+    })(jquery);
+
+    $('#modal').on('show.bs.modal', function (event) {
+        const repairID = event.relatedTarget.dataset.id;
+        $('#deleteRepairForm').attr('action', `/admin/repair/${repairID}/delete`);
+        $('.modal-title').text(function () {
+            return `Repair #${repairID}`;
+        });
+    });
+
+});

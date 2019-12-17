@@ -133,4 +133,13 @@ public class RepairServiceImpl implements RepairService {
 
     }
 
+    @Override
+    public List<RepairModel> getAllRepairs() {
+        return repairRepository
+                .getAllRepairs()
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
+    }
+
 }
