@@ -29,9 +29,9 @@
     position:absolute;
     top:0;
     bottom:0;
-    height:100%;
     left:0;
     width:60px;
+    min-height: calc(100vh - 48px);
     overflow:hidden;
     -webkit-transition:width .05s linear;
     transition:width .05s linear;

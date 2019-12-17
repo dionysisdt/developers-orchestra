@@ -21,7 +21,7 @@ import static com.projectfuture.team0.developersorchestra.utils.GlobalAttributes
 
 @Controller
 public class CreateRepairController {
-    private static final String REPAIRS_FORM = "repairForm";
+    private static final String REPAIRS_FORM = "repairsForm";
     private static final String REPAIR_TYPES = "repairTypes";
     private static final String REPAIR_STATUS = "repairStatus";
 
@@ -31,27 +31,27 @@ public class CreateRepairController {
     @Autowired
     private RepairFormToRepairMapper mapper;
 
-    @GetMapping(value = "repairs/create")
+    @GetMapping(value = "/admin/repair/create")
     public String repairsDynamic(Model model) {
 
         model.addAttribute(REPAIRS_FORM, new RepairForm());
         model.addAttribute(REPAIR_TYPES, RepairType.values());
         model.addAttribute(REPAIR_STATUS, RepairStatus.values());
 
-        return "";
+        return "repairs/createRepair";
     }
 
-    @PostMapping(value = "repairs/create")
+    @PostMapping(value = "/admin/repair/create")
     public String createRepairs(Model model, @Valid @ModelAttribute(REPAIRS_FORM)
             RepairForm repairForm, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "";
+            return "repairs/createRepair";
         }
 
         Repair repair = mapper.toRepair(repairForm);
         repairService.createRepair(repair);
-        return "";
+        return "redirect:/homepages/repairs";
     }
 }

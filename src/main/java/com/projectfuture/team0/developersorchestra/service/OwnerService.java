@@ -19,6 +19,8 @@ public interface OwnerService {
 
     Optional<OwnerModel> findOwnerByTaxID(String taxID);
 
+    Optional<Owner> findByTaxID(String taxID);
+
     Optional<OwnerModel> findOwnerByPhoneNumber(String phoneNumber);
 
     Optional<OwnerModel> findOwnerByEmail(String email);

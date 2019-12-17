@@ -20,13 +20,13 @@ public class SearchOwnerController {
     @Autowired
     private OwnerService ownerService;
 
-    @GetMapping("/admin/search/owner")
+    @GetMapping("/admin/owner/search")
     public String searchOwner(ModelMap modelMap) {
         modelMap.addAttribute("searchOwnerForm", new SearchOwnerForm());
         return "owners/searchOwner";
     }
 
-    @PostMapping("/admin/search/owner")
+    @PostMapping("/admin/owner/search")
     public String searchOwner(@ModelAttribute("searchOwnerForm") SearchOwnerForm searchOwnerForm, ModelMap modelMap) {
 
 
