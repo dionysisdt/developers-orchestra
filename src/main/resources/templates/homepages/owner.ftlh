@@ -15,7 +15,7 @@
     <#include "../partials/sidebar.ftlh">
     <div class="flex-grow-1">
         <div class="content-cnt">
-            <h2> <@spring.message "welcome.title"/> ${username!"Guest"}</h2>
+            <h2> <@spring.message "welcome.title"/> ${username}</h2>
 
             <div class="table-responsive">
                 <table class="table table-striped table-sm">

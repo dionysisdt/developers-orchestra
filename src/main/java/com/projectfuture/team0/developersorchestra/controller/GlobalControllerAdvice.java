@@ -22,11 +22,13 @@ public class GlobalControllerAdvice {
     @ModelAttribute
     public void globalAttributes(Model model, @RequestParam(name = "userId", required = false, defaultValue = "0") String userId) {
 
+        /*
         if (userIsLoggedIn(userId)) {
             SecurityContextHolder.getContext().getAuthentication().getName();
             String username = ownerService.findOwnerByOwnerID(Long.parseLong(userId)).map(OwnerModel::getFirstName).get();
             model.addAttribute(GlobalAttributes.USERNAME, username);
         }
+        */
     }
 
     private boolean userIsLoggedIn(String userId) {

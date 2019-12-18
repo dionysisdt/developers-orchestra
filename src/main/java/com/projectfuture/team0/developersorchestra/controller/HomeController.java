@@ -29,13 +29,9 @@ public class HomeController {
     public String home(Model model) {
         if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ADMIN"))) {
-            List<RepairModel> repairs = repairService.findNext10Repairs(LocalDate.now());
-            model.addAttribute(REPAIRS_LIST, repairs);
-            return "homepages/admin";
+            return "redirect:/admin/home";
         }
-        List<RepairModel> repairs = repairService.findAll();
-        model.addAttribute(REPAIRS_LIST, repairs);
-        return "homepages/owner";
+        return "redirect:/owner/home";
     }
 
     @GetMapping(value = "/admin/home")

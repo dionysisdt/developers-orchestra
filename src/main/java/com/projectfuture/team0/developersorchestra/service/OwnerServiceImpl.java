@@ -82,6 +82,11 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
+    public Optional<Owner> findByEmail(String email) {
+        return ownerRepository.findOwnerByEmail(email);
+    }
+
+    @Override
     public Optional<OwnerModel> findOwnerByPhoneNumber(String phoneNumber) {
         return ownerRepository
                 .findOwnerByPhoneNumber(phoneNumber)

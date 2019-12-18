@@ -49,8 +49,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(loginSucessHandler)
                 .failureUrl("/login?error=true")
 
-
-
                 //LOGOUT Configuration
                 .and()
                 .logout()
@@ -60,19 +58,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
 
-
-
                 //AUTHORIZATION AND ROLES
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/login").anonymous()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/owner/**").hasAuthority("USER")
 
                 //ERROR HANDLING FOR ACCESS DENIED
                 .and()
                 .exceptionHandling().accessDeniedPage("/error/access-denied")
-
-
 
                 .and()
                 .headers()
