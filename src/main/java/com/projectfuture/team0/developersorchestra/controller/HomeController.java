@@ -1,6 +1,8 @@
 package com.projectfuture.team0.developersorchestra.controller;
 
+import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
+import com.projectfuture.team0.developersorchestra.service.OwnerService;
 import com.projectfuture.team0.developersorchestra.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,9 +17,13 @@ import java.util.List;
 @Controller
 public class HomeController {
     private static final String REPAIRS_LIST = "repairs";
+    private static final String USERNAME = "username";
 
     @Autowired
     private RepairService repairService;
+
+    @Autowired
+    private OwnerService ownerService;
 
     @GetMapping(path = "/")
     public String home(Model model) {
@@ -41,9 +47,13 @@ public class HomeController {
 
     @GetMapping(value = "/owner/home")
     public String repairs(Model model) {
-        SecurityContextHolder.getContext().getAuthentication().getName();
-        List<RepairModel> repairs = repairService.findAll();
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        Owner owner = ownerService.findByEmail(email).get();
+        List<RepairModel> repairs = repairService.findByOwner(owner);
         model.addAttribute(REPAIRS_LIST, repairs);
+
+        String username = owner.getFirstName() + " " + owner.getLastName();
+        model.addAttribute(USERNAME, username);
         return "homepages/owner";
     }
 
