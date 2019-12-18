@@ -28,6 +28,7 @@ public interface RepairRepository extends JpaRepository<Repair, Long> {
 
     List<Repair> findByRepairAddress(String repairAddress);
 
-    List<Repair> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
+    List<Repair> findRepairsByOwnerTaxID(String taxID);
 
+    List<Repair> findRepairsByDate(Date date);
 }
