@@ -32,7 +32,9 @@ public interface RepairService {
 
     Optional<RepairModel> findRepairByRepairID(Long repairID);
 
-    List<RepairModel> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
+    List<RepairModel> findRepairsByDate(Date date);
+
+    List<RepairModel> findRepairsByOwnerTaxID(String taxID);
 
     List<RepairModel> getAllRepairs();
 
