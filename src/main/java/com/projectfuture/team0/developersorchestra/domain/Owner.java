@@ -48,7 +48,7 @@ public class Owner {
     @Column(name = "user_privileges", length = MAX_NAME_LENGTH)
     private UserPrivileges userPrivileges;
 
-    @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
+    @OneToMany(mappedBy = "owner", targetEntity = Repair.class, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE, CascadeType.DETACH})
     private List<Repair> repairs;
 
     public Owner(String taxID, String firstName, String lastName, String ownerAddress, String phoneNumber,

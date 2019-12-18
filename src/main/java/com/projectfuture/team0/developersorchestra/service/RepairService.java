@@ -30,7 +30,7 @@ public interface RepairService {
 
     List<RepairModel> findByRepairAddress(String repairAddress);
 
-    Optional<RepairModel> findByRepairID(Long repairID);
+    Optional<RepairModel> findRepairByRepairID(Long repairID);
 
     List<RepairModel> findRepairsByOwnerTaxIDOrDate(String taxID, Date date);
 

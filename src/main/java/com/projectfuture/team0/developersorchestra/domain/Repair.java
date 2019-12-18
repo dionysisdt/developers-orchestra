@@ -37,7 +37,7 @@ public class Repair {
     @Column(name = "address", nullable = false, length = MAX_NAME_LENGTH)
     private String repairAddress;
 
-    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "owner_id")
     private Owner owner;
 

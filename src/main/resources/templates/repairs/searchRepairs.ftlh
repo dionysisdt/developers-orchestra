@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -15,7 +15,8 @@
     <div class="flex-grow-1">
         <div class="content-cnt">
 
-            <form class="form-inline" action="/admin/search/repairs" name="searchRepairForm" method="POST">
+            <form class="form-inline" action="/admin/repair/search" name="searchRepairForm" method="POST">
+                <h2>Search Repair</h2>
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><span data-feather="calendar"></span></div>
@@ -38,25 +39,6 @@
 
             </form>
 
-            <h2>Results</h2>
-
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Type</th>
-                        <th>Cost</th>
-                        <th>Owner</th>
-                        <th>Description</th>
-                        <th class="text-center">Edit</th>
-                        <th class="text-center">Remove</th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
         </div>
     </div>
 </main>

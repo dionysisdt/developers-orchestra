@@ -23,21 +23,21 @@ public class EditRepairController {
     @PostMapping(value = "/admin/repair/{repairID}/delete")
     public String deleteRepair(@PathVariable Long repairID) {
         repairService.deleteById(repairID);
-        return "redirect:/repairs/home";
+        return "redirect:/admin/repairs";
     }
 
     @GetMapping(value = "/admin/repair/{repairID}/edit")
     public String editRepair(@PathVariable Long repairID, Model model) {
-        RepairModel repairModel = repairService.findByRepairID(repairID).get();
+        RepairModel repairModel = repairService.findRepairByRepairID(repairID).get();
         model.addAttribute(REPAIR_ATTR, repairModel);
         model.addAttribute(REPAIR_TYPES, RepairType.values());
         model.addAttribute(REPAIR_STATUS, RepairStatus.values());
-        return "repairs/editRepairs";
+        return "repairs/editRepair";
     }
 
     @PostMapping(value = "/admin/repair/edit")
     public String editRepair(RepairModel repairModel) {
         repairService.updateRepair(repairModel);
-        return "redirect:/repairs/home";
+        return "redirect:/admin/repairs";
     }
 }

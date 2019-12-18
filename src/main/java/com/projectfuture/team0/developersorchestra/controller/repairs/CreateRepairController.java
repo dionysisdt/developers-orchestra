@@ -52,6 +52,6 @@ public class CreateRepairController {
 
         Repair repair = mapper.toRepair(repairForm);
         repairService.createRepair(repair);
-        return "redirect:/homepages/repairs";
+        return "redirect:/admin/repairs";
     }
 }

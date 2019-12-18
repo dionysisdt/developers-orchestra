@@ -4,44 +4,20 @@
 <html lang="en">
 
 <head>
-    <title>Developer Orchestra</title>
+    <#include "../partials/head.ftlh">
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
 <#include "../partials/sidebar.ftlh">
 
-                </ul>
-
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>USER</span>
-                    <a class="d-flex align-items-center text-muted" href="#">
-                        <span data-feather="user"></span>
-                    </a>
-                </h6>
-
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./login.html">
-                            <span data-feather="log-out"></span> Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="w3-row-padding">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 py-2 px-2">
-
-            <h2>Create Repair</h2>
-            <div class="table-responsive px-2 py-2">
-                <form action="/repairs/create" name="repairsForm" method="POST">
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 py-2 px-2">
-    <div class="flex-grow-1">
-        <div class="content-cnt">
             <div class="w3-row-padding">
-                <h2>Create Repair</h2>
-                <div class="table-responsive px-2 py-2">
-                    <form class="needs-validation" novalidate>
+            <h2>Create Repair</h2>
+                <div class="flex-grow-1">
+                    <div class="content-cnt">
+                        <div class="table-responsive px-2 py-2">
+                            <form action="/admin/repair/create" name="repairsForm" method="POST">
 
                     <label for="date">Date</label>
                         <div class="input-group mb-2 mr-sm-2">
@@ -118,6 +94,7 @@
             </div>
         </div>
     </div>
+            </div>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
