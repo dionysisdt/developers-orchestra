@@ -12,7 +12,26 @@
 
 <#include "../partials/nav.ftlh">
 <div class="d-flex">
-    <#include "../partials/sidebar.ftlh">
+    <div class="main-menu-cnt position-relative align-self-stretch">
+        <nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="/owner/home">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+             </ul>
+            <ul class="logout">
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <div class="flex-grow-1">
         <div class="content-cnt">
             <h2> <@spring.message "welcome.title"/> ${username}</h2>
