@@ -3,8 +3,10 @@ package com.projectfuture.team0.developersorchestra.service;
 import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.domain.Repair;
 import com.projectfuture.team0.developersorchestra.enums.RepairStatus;
+import com.projectfuture.team0.developersorchestra.mappers.RepairModelToRepairMapper;
 import com.projectfuture.team0.developersorchestra.mappers.RepairToRepairModelMapper;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
+import com.projectfuture.team0.developersorchestra.repository.OwnerRepository;
 import com.projectfuture.team0.developersorchestra.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,9 @@ public class RepairServiceImpl implements RepairService {
     @Autowired
     private RepairToRepairModelMapper mapper;
 
+    @Autowired
+    private RepairModelToRepairMapper mapper2;
+
     @Override
     public Repair createRepair(Repair repair) {
         return repairRepository.save(repair);
@@ -32,15 +37,8 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public Repair updateRepair(RepairModel repairModel) {
 
-        Repair originalRepair = repairRepository.findRepairByRepairID(repairModel.getRepairID()).get();
-        originalRepair.setRepairAddress(repairModel.getRepairAddress());
-        originalRepair.setOwner(repairModel.getOwner());
-        originalRepair.setDescription(repairModel.getDescription());
-        originalRepair.setCost(repairModel.getCost());
-        originalRepair.setDate(repairModel.getDate());
-        originalRepair.setRepairType(repairModel.getRepairType());
-        originalRepair.setRepairStatus(repairModel.getRepairStatus());
-        return repairRepository.save(originalRepair);
+        Repair repair = mapper2.mapToRepair(repairModel);
+        return repairRepository.save(repair);
 
     }
 

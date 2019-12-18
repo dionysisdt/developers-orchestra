@@ -11,11 +11,22 @@ public class RepairModel {
 
     private Long repairID;
     private Date date;
+    private String dateHTML;
     private RepairStatus repairStatus;
     private RepairType repairType;
     private Double cost;
     private String repairAddress;
     private Owner owner;
+
+    public String getOwnerTaxID() {
+        return ownerTaxID;
+    }
+
+    public void setOwnerTaxID(String ownerTaxID) {
+        this.ownerTaxID = ownerTaxID;
+    }
+
+    private String ownerTaxID;
     private String description;
     private String propertyType;
 
@@ -90,6 +101,10 @@ public class RepairModel {
     public void setPropertyType(String propertyType) {
         this.propertyType = propertyType;
     }
+
+    public String getDateHTML() { return dateHTML; }
+
+    public void setDateHTML(String dateHTML) { this.dateHTML = dateHTML; }
 
     public RepairModel() {
     }
