@@ -86,6 +86,7 @@
 </div>
 
 <#include "../partials/scripts.ftlh">
+<script src="/js/main.js"></script>
 </body>
 
 </html>
