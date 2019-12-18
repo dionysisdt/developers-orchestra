@@ -11,21 +11,6 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="flex-grow-1">
         <div class="content-cnt">
-            <form class="form-inline" action="/admin/owner/search" name="searchOwnerForm" method="POST">
-
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><span data-feather="at-sign"></span></div>
-                    </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email">
-                </div>
-
-                <label class="sr-only" for="inlineFormInputName2">TaxID</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="TaxID">
-
-                <button type="Search" class="btn btn-primary mb-2">Search</button>
-
-            </form>
 
             <h2>Results</h2>
 

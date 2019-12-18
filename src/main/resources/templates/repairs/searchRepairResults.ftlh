@@ -17,25 +17,6 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="flex-grow-1">
         <div class="content-cnt">
-            <form class="form-inline" action="/admin/repair/search" name="searchRepairForm" method="POST">
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><span data-feather="calendar"></span></div>
-                    </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="01/01/2019">
-                </div>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><span data-feather="calendar"></span></div>
-                    </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="05/01/2019">
-                </div>
-
-                <label class="sr-only" for="inlineFormInputName2">TaxID</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="123456789">
-
-                <button type="Search" class="btn btn-primary mb-2">Search</button>
-            </form>
 
             <h2>Results</h2>
 
