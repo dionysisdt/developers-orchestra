@@ -35,7 +35,6 @@
                 <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="123456789">
 
                 <button type="Search" class="btn btn-primary mb-2">Search</button>
-
             </form>
 
             <h2>Results</h2>

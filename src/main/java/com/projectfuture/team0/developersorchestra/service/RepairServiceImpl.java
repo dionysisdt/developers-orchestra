@@ -41,14 +41,12 @@ public class RepairServiceImpl implements RepairService {
         originalRepair.setRepairType(repairModel.getRepairType());
         originalRepair.setRepairStatus(repairModel.getRepairStatus());
         return repairRepository.save(originalRepair);
-
     }
 
     @Override
     public void deleteById(Long repairID) {
 
         repairRepository.deleteById(repairID);
-
     }
 
     @Override
