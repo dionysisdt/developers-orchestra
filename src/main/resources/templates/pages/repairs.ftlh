@@ -4,7 +4,7 @@
 
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -35,6 +35,7 @@
                     <#if repairs??>
                     <#list repairs as repair>
                         <tr data-id="${repair.repairID}">
+                            <td>${repair.repairID}</td>
                             <td>${repair.date}</td>
                             <td>${repair.repairStatus}</td>
                             <td>${repair.repairType}</td>
@@ -57,21 +58,24 @@
                     </#if>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            Confirm Delete
-                        </div>
-                        <div class="modal-body">
-                            Are you sure you want to delete the record?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-danger btn-ok text-white">Delete</a>
+                <div id="modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Owner</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>re you sure you want to delete the record?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteRepairForm">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,10 +89,6 @@
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
     feather.replace();
-
-    $('#confirm-delete').on('show.bs.modal', function (e) {
-        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-    });
 </script>
 <script src="/js/main.js"></script>
 </body>

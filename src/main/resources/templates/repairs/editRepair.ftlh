@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <#include "../partials/head.ftlh">
-    <title>Developer Orchestra</title>
+    <title>Developers Orchestra</title>
 </head>
 
 <body>
@@ -16,13 +16,13 @@
                 <div class="w3-row-padding">
                     <h2>Edit Repair</h2>
                     <div class="table-responsive">
-                        <form action="/repairs/edit" method="POST">
+                        <form action="/admin/repair/edit" method="POST">
                             <label for="datepicker">Date</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                                 </div>
-                                <input type="text" class="form-control" id="datepicker" name="publicationDate" value="${repair.repairDate}">
+                                <input type="text" class="form-control" id="datepicker" name="publicationDate" value="${repair.date}">
                             </div>
 
                             <label for="repairStatus">Repair Status</label>
@@ -34,16 +34,7 @@
                                 </#if>
                             </select>
 
-                            <label for="repairType">Repair type</label>
-                            <select class="custom-select" id="repairType" name="repairType">
-                                <#if repairType??>
-                                    <#list repairTypes as repairType>
-                                        <option value="${repairType}"<#if repair.repairType == repairType> selected</#if>>${repairType}</option>
-                                    </#list>
-                                </#if>
-                            </select>
-
-                            <label for="repairType">Repair type</label>
+                            <label for="repairType">Repair Type</label>
                             <select class="custom-select" id="repairType" name="repairType">
                                 <#if repairTypes??>
                                     <#list repairTypes as repairType>
@@ -58,8 +49,8 @@
                             <label for="repairAddress">Repair Address</label>
                             <input type="text" class="form-control" id="repairAddress" name="repairAddress" value="${repair.repairAddress}">
 
-                            <label for="owner">Owner's social security number</label>
-                            <input type="text" class="form-control" id="owner" name="owner SSN" value="${repair.owner}">
+                            <label for="owner">Owner's TaxID</label>
+                            <input type="text" class="form-control" id="owner" name="owner" value="${repair.owner.taxID}">
 
                             <label for="description">Description</label>
                             <input type="text" class="form-control" id="description" name="description" value="${repair.description}">

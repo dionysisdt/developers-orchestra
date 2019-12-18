@@ -23,13 +23,6 @@
             </li>
 
             <li>
-                <a href="/admin/owner/{ownerID}/edit">
-                    <i class="fa fa-pencil-alt fa-2x"></i>
-                    <span class="nav-text">Edit Owner</span>
-                </a>
-            </li>
-
-            <li>
                 <a href="/admin/owner/search">
                     <i class="fa fa-search fa-2x"></i>
                     <span class="nav-text">Search Owner</span>
@@ -37,28 +30,21 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="/admin/repairs">
                     <i class="fa fa-screwdriver fa-2x"></i>
                     <span class="nav-text">Repairs</span>
                 </a>
             </li>
 
             <li>
-                <a href="#">
+                <a href="/admin/repair/create">
                     <i class="fa fa-plus-square fa-2x"></i>
                     <span class="nav-text">Create Repair</span>
                 </a>
             </li>
 
             <li>
-                <a href="#">
-                    <i class="fa fa-pencil-alt fa-2x"></i>
-                    <span class="nav-text">Edit Repair</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
+                <a href="/admin/repair/search">
                     <i class="fa fa-search fa-2x"></i>
                     <span class="nav-text">Search Repair</span>
                 </a>

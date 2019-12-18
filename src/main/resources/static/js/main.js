@@ -1,5 +1,5 @@
 
-jquery(function ($) {
+jQuery(function ($) {
     "use strict";
 
 
@@ -131,7 +131,7 @@ jquery(function ($) {
         });
     });
 
-    /*
+
     $('#modal').on('show.bs.modal', function (event) {
         const repairID = event.relatedTarget.dataset.id;
         $('#deleteRepairForm').attr('action', `/admin/repair/${repairID}/delete`);
@@ -139,5 +139,5 @@ jquery(function ($) {
             return `Repair #${repairID}`;
         });
     });
-    */
+
 });

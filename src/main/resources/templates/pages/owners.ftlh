@@ -50,35 +50,33 @@
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="#" data-href="/admin/${owner.ownerID}/delete" data-toggle="modal"
-                                   data-target="#confirm-delete">
-                                    <a href="#" data-href="/admin/${owner.ownerID}/delete" data-toggle="modal"
-                                       data-target="#confirm-delete">
-                                        <span data-feather="trash-2"></span>
-                                    </a>
-                                </a>
+                                <button class="btn btn-link" data-toggle="modal" data-target="#modal" data-id="${owner.ownerID}">
+                                    <span data-feather="x"></span>
+                                </button>
                             </td>
                         </tr>
                     </#list>
                     </#if>
                     </tbody>
                 </table>
-            </div>
-
-
-            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            Confirm Delete
-                        </div>
-                        <div class="modal-body">
-                            Are you sure you want to delete the record?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-danger btn-ok text-white">Delete</a>
+                <div id="modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Owner</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>re you sure you want to delete the record?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteOwnerForm">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,11 +86,6 @@
 </div>
 
 <#include "../partials/scripts.ftlh">
-<script>
-    $('#confirm-delete').on('show.bs.modal', function (e) {
-        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-    });
-</script>
 <script src="/js/main.js"></script>
 </body>
 

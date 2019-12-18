@@ -11,7 +11,7 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="flex-grow-1">
         <div class="content-cnt">
-            <form class="form-inline">
+            <form class="form-inline" action="/admin/owner/search" name="searchOwnerForm" method="POST">
 
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
@@ -60,14 +60,7 @@
                                 <td class="text-center"><a class="btn btn-link"
                                                            href="/admin/owner/${owner.ownerID}/edit"><span
                                                 data-feather="tool"></span></a></td>
-                                <td class="text-center">
-
-                                    <button
-                                            class="btn btn-link"
-                                            data-toggle="modal"
-                                            data-target="#modal"
-                                            data-id="${owner.ownerID}"
-                                    >
+                                <td class="text-center"> <button class="btn btn-link" data-toggle="modal" data-target="#modal" data-id="${owner.ownerID}">
                                         <span data-feather="x"></span>
                                     </button>
 
@@ -79,9 +72,8 @@
 
                 </table>
 
-                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog">
+                <div id="modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Owner</h5>
@@ -90,7 +82,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Are you sure you want to delete the record?
+                                <p>re you sure you want to delete the record?</p>
                             </div>
                             <div class="modal-footer">
                                 <form method="post" id="deleteOwnerForm">
@@ -107,13 +99,6 @@
 </main>
 
 <#include "../partials/scripts.ftlh">
-<script>
-
-    $('#confirm-delete').on('show.bs.modal', function (e) {
-        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-    });
-
-</script>
-
+<script src="/js/main.js"></script>
 </body>
 </html>

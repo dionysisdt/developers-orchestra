@@ -32,7 +32,7 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public Repair updateRepair(RepairModel repairModel) {
 
-        Repair originalRepair = repairRepository.findByRepairID(repairModel.getRepairID()).get();
+        Repair originalRepair = repairRepository.findRepairByRepairID(repairModel.getRepairID()).get();
         originalRepair.setRepairAddress(repairModel.getRepairAddress());
         originalRepair.setOwner(repairModel.getOwner());
         originalRepair.setDescription(repairModel.getDescription());
@@ -117,9 +117,9 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
-    public Optional<RepairModel> findByRepairID(Long repairID) {
+    public Optional<RepairModel> findRepairByRepairID(Long repairID) {
         return repairRepository
-                .findByRepairID(repairID)
+                .findRepairByRepairID(repairID)
                 .map(repair -> mapper.mapToRepairModel(repair));
     }
 
