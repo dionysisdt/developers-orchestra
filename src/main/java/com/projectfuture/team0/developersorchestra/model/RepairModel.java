@@ -16,19 +16,12 @@ public class RepairModel {
     private RepairType repairType;
     private Double cost;
     private String repairAddress;
-    private Owner owner;
-
-    public String getOwnerTaxID() {
-        return ownerTaxID;
-    }
-
-    public void setOwnerTaxID(String ownerTaxID) {
-        this.ownerTaxID = ownerTaxID;
-    }
-
+    private String ownerFirstName;
+    private String ownerLastName;
     private String ownerTaxID;
     private String description;
     private String propertyType;
+
 
     public Long getRepairID() {
         return repairID;
@@ -78,14 +71,6 @@ public class RepairModel {
         this.repairAddress = repairAddress;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -106,21 +91,45 @@ public class RepairModel {
 
     public void setDateHTML(String dateHTML) { this.dateHTML = dateHTML; }
 
+    public String getOwnerFirstName() {
+        return ownerFirstName;
+    }
+
+    public void setOwnerFirstName(String ownerFirstName) {
+        this.ownerFirstName = ownerFirstName;
+    }
+
+    public String getOwnerLastName() {
+        return ownerLastName;
+    }
+
+    public void setOwnerLastName(String ownerLastName) {
+        this.ownerLastName = ownerLastName;
+    }
+
+    public String getOwnerTaxID() {
+        return ownerTaxID;
+    }
+
+    public void setOwnerTaxID(String ownerTaxID) {
+        this.ownerTaxID = ownerTaxID;
+    }
+
     public RepairModel() {
     }
 
-    public RepairModel(Date date, RepairStatus repairStatus, RepairType repairType, Double cost,
-                       String repairAddress, Owner owner, String description, String propertyType) {
-
+    public RepairModel(Long repairID, Date date, String dateHTML, RepairStatus repairStatus, RepairType repairType, Double cost, String repairAddress, String ownerFirstName, String ownerLastName, String ownerTaxID, String description, String propertyType) {
+        this.repairID = repairID;
         this.date = date;
+        this.dateHTML = dateHTML;
         this.repairStatus = repairStatus;
         this.repairType = repairType;
         this.cost = cost;
         this.repairAddress = repairAddress;
-        this.owner = owner;
+        this.ownerFirstName = ownerFirstName;
+        this.ownerLastName = ownerLastName;
+        this.ownerTaxID = ownerTaxID;
         this.description = description;
         this.propertyType = propertyType;
-
     }
-
 }

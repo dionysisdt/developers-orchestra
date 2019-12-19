@@ -17,6 +17,10 @@
                     <h2>Edit Repair</h2>
                     <div class="table-responsive">
                         <form action="/admin/repair/edit" method="POST">
+
+                            <input type="hidden" name="repairID" value="${repair.repairID}">
+
+
                             <label for="datepicker">Date</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -49,8 +53,8 @@
                             <label for="repairAddress">Repair Address</label>
                             <input type="text" class="form-control" id="repairAddress" name="repairAddress" value="${repair.repairAddress}">
 
-                            <label for="taxID">Owner's TaxID</label>
-                            <input type="text" class="form-control" id="taxID" name="taxID" value="${repair.owner.taxID}">
+                            <label for="ownerTaxID">Owner's TaxID</label>
+                            <input type="text" class="form-control" id="ownerTaxID" name="ownerTaxID" value="${repair.ownerTaxID}">
 
                             <label for="description">Description</label>
                             <input type="text" class="form-control" id="description" name="description" value="${repair.description}">

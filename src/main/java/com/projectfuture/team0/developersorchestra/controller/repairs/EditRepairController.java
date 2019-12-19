@@ -55,11 +55,6 @@ public class EditRepairController {
             e.printStackTrace();
         }
 
-        //String taxID = repairModel.getOwnerTaxID();
-        String taxID = repairModel.getOwner().getTaxID();
-        System.err.println(taxID);
-        //String taxID = "557748395";
-        repairModel.setOwner(ownerService.findByTaxID(taxID).get());
         repairService.updateRepair(repairModel);
         return "redirect:/admin/repairs";
     }

@@ -27,7 +27,7 @@ public class RepairServiceImpl implements RepairService {
     private RepairToRepairModelMapper mapper;
 
     @Autowired
-    private RepairModelToRepairMapper mapper2;
+    private RepairModelToRepairMapper repairModelToRepairMapper;
 
     @Override
     public Repair createRepair(Repair repair) {
@@ -37,7 +37,7 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public Repair updateRepair(RepairModel repairModel) {
 
-        Repair repair = mapper2.mapToRepair(repairModel);
+        Repair repair = repairModelToRepairMapper.mapToRepair(repairModel);
         return repairRepository.save(repair);
 
     }

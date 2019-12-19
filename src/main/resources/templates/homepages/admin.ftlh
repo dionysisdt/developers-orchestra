@@ -38,10 +38,10 @@
                             <td>${repair.repairStatus}</td>
                             <td>${repair.repairType}</td>
                             <td>${repair.cost}</td>
-                            <td>${repair.owner.firstName} ${repair.owner.lastName}</td>
+                            <td>${repair.ownerFirstName} ${repair.ownerLastName}</td>
                             <td>${repair.description}</td>
                             <td class="text-center">
-                                <a href="/repairs/${repair.repairID}/edit" title="Edit Customer">
+                                <a href="/admin/repair/${repair.repairID}/edit" title="Edit Customer">
                                     <span data-feather="edit-3"></span>
                                 </a>
                             </td>
