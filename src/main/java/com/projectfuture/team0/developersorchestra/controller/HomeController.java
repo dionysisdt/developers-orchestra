@@ -25,6 +25,7 @@ public class HomeController {
     @Autowired
     private OwnerService ownerService;
 
+    /*
     @GetMapping(path = "/")
     public String home(Model model) {
         if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
@@ -33,6 +34,7 @@ public class HomeController {
         }
         return "redirect:/owner/home";
     }
+    */
 
     @GetMapping(value = "/admin/home")
     public String viewAdminHomePage(Model model) {
