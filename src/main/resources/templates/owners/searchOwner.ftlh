@@ -7,9 +7,10 @@
 </head>
 
 <body>
-<#include "../partials/sidebar.ftlh">
+<#include "../partials/nav.ftlh">
 
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<div class="d-flex">
+    <#include "../partials/sidebar.ftlh">
     <div class="flex-grow-1">
         <div class="content-cnt">
             <form class="form-inline" action="/admin/owner/search" name="searchOwnerForm" method="POST">
@@ -30,7 +31,8 @@
             </form>
         </div>
     </div>
-</main>
+    </div>
+
 <#include "../partials/scripts.ftlh">
 </body>
 </html>

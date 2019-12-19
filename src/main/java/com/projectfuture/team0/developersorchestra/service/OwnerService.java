@@ -35,4 +35,5 @@ public interface OwnerService {
 
     List<OwnerModel> findOwnerByTaxIDOrEmail(String taxID, String email);
 
+    Optional<Owner> findByEmail(String email);
 }

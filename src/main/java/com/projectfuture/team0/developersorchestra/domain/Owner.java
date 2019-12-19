@@ -2,6 +2,7 @@ package com.projectfuture.team0.developersorchestra.domain;
 
 import com.projectfuture.team0.developersorchestra.enums.PropertyType;
 import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
+import com.projectfuture.team0.developersorchestra.forms.RegisterForm;
 
 import javax.persistence.*;
 import java.util.List;
@@ -69,6 +70,11 @@ public class Owner {
 
 
     public Owner() {
+    }
+
+    public Owner(RegisterForm registerForm) {
+        this.email = registerForm.getEmail();
+        this.password = registerForm.getPassword();
     }
 
     public Long getOwnerID() {

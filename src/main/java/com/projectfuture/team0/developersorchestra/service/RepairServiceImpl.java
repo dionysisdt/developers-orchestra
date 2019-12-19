@@ -46,7 +46,6 @@ public class RepairServiceImpl implements RepairService {
     public void deleteById(Long repairID) {
 
         repairRepository.deleteById(repairID);
-
     }
 
     @Override
@@ -122,13 +121,21 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
-    public List<RepairModel> findRepairsByOwnerTaxIDOrDate(String taxID, Date date) {
+    public List<RepairModel> findRepairsByOwnerTaxID(String taxID) {
         return repairRepository
-                .findRepairsByOwnerTaxIDOrDate(taxID,date)
+                .findRepairsByOwnerTaxID(taxID)
                 .stream()
                 .map(repair -> mapper.mapToRepairModel(repair))
                 .collect(Collectors.toList());
+    }
 
+    @Override
+    public List<RepairModel> findRepairsByDate(Date date) {
+        return repairRepository
+                .findRepairsByDate(date)
+                .stream()
+                .map(repair -> mapper.mapToRepairModel(repair))
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -7,4 +7,5 @@ public class GlobalAttributes {
     public static final String MESSAGE_LIST = "messages";
     public static final String WELCOME_MESSAGE = "welcomeMessage";
     public static final String USERNAME = "username";
+    public static final String TIMESTAMP_COOKIE_NAME = "TIMESTAMP";
 }

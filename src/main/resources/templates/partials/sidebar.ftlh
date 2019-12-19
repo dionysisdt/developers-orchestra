@@ -3,14 +3,14 @@
         <ul>
             <li>
                 <a href="/admin/home">
-                    <i class="fa fa-truck-monsterfa-2x"></i>
+                    <i class="fa fa-home fa-2x"></i>
                     <span class="nav-text">Home</span>
                 </a>
             </li>
 
             <li class="has-subnav">
                 <a href="/admin/owners">
-                    <i class="fa fa-user-cog fa-2x"></i>
+                    <i class="fa fa-users fa-2x"></i>
                     <span class="nav-text">Property Owners</span>
                 </a>
             </li>
@@ -31,7 +31,7 @@
 
             <li>
                 <a href="/admin/repairs">
-                    <i class="fa fa-screwdriver fa-2x"></i>
+                    <i class="fa fa-wrench fa-2x"></i>
                     <span class="nav-text">Repairs</span>
                 </a>
             </li>
@@ -54,7 +54,7 @@
 
         <ul class="logout">
             <li>
-                <a href="#">
+                <a href="/logout">
                     <i class="fa fa-power-off fa-2x"></i>
                     <span class="nav-text">Logout</span>
                 </a>

@@ -1,6 +1,5 @@
 package com.projectfuture.team0.developersorchestra.controller.repairs;
 
-import com.projectfuture.team0.developersorchestra.domain.Repair;
 import com.projectfuture.team0.developersorchestra.forms.SearchRepairForm;
 import com.projectfuture.team0.developersorchestra.model.RepairModel;
 import com.projectfuture.team0.developersorchestra.service.RepairService;
@@ -13,11 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class SearchRepairController {
@@ -35,25 +32,25 @@ public class SearchRepairController {
     @PostMapping(value = "/admin/repair/search")
     public String searchRepair(@ModelAttribute("searchRepairForm") SearchRepairForm searchRepairForm, ModelMap modelMap) {
 
-        //Date date = Date.parse(searchRepairForm.getDate(),
-        //        DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        //Date date = new Date();
+        List<RepairModel> repairs = new ArrayList<>();
 
 
-        String taxId = "";
-        if(searchRepairForm.getOwner() != null) {
-            taxId = searchRepairForm.getOwner().getTaxID();
+        if(searchRepairForm.getTaxID() != "") {
+            String taxId = searchRepairForm.getTaxID();
+            repairs = repairService.findRepairsByOwnerTaxID(taxId);
         }
 
-        Date date = new Date();
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-            date = formatter.parse(searchRepairForm.getDate());
-        } catch (ParseException e) {
-            e.printStackTrace();
+        //System.err.println(searchRepairForm.);
+        if(searchRepairForm.getDate() != null ) {
+            try {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                Date date = formatter.parse(searchRepairForm.getDate());
+                repairs = repairService.findRepairsByDate(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
 
-        List<RepairModel> repairs = repairService.findRepairsByOwnerTaxIDOrDate(taxId, date);
         if (!repairs.isEmpty()) {
             modelMap.addAttribute(REPAIRS_LIST, repairs);
         }

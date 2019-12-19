@@ -8,7 +8,7 @@ public class SearchRepairForm {
 
     private String date;
 
-    private Owner owner;
+    private String taxID;
 
     public String getDate() {
         return date;
@@ -18,11 +18,11 @@ public class SearchRepairForm {
         this.date = date;
     }
 
-    public Owner getOwner() {
-        return owner;
+    public String getTaxID() {
+        return taxID;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public void setTaxID(String taxID) {
+        this.taxID = taxID;
     }
 }

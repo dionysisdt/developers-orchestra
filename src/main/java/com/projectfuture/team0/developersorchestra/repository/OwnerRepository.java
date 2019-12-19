@@ -28,6 +28,8 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
 
     List<Owner> findOwnerByOwnerAddress(String ownerAddress);
 
+    Owner findByEmail(String username);
+
     List<Owner> findOwnerByTaxIDOrEmail(String taxID, String email);
 
 }
