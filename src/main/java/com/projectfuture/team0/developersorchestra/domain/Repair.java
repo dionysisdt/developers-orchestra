@@ -133,7 +133,7 @@ public class Repair {
         sb.append(", repairType=").append(repairType);
         sb.append(", cost=").append(cost);
         sb.append(", repairAddress='").append(repairAddress).append('\'');
-        sb.append(", owner=").append(owner);
+        sb.append(", ownerTaxId=").append(owner.getTaxID());
         sb.append(", description='").append(description).append('\'');
         sb.append('}');
         return sb.toString();
