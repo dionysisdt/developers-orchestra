@@ -8,9 +8,10 @@
 </head>
 
 <body>
-<#include "../partials/sidebar.ftlh">
+<#include "../partials/nav.ftlh">
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<div class="d-flex">
+    <#include "../partials/sidebar.ftlh">
         <div class="flex-grow-1">
             <div class="content-cnt">
                 <div class="w3-row-padding">
@@ -65,7 +66,7 @@
                 </div>
             </div>
         </div>
-    </main>
+</div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
