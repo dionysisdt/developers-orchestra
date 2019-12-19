@@ -54,9 +54,6 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
         </div>
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
 <div class="container-login100-form-btn">
     <button class="login100-form-btn" type="submit">Login</button>
 </div>
