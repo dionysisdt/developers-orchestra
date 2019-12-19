@@ -17,9 +17,8 @@
 
     <div class="flex-grow-1">
         <div class="content-cnt">
-
+            <h2>Search Repair</h2>
             <form class="form-inline" action="/admin/repair/search" name="searchRepairForm" method="POST">
-                <h2>Search Repair</h2>
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><span data-feather="calendar"></span></div>
