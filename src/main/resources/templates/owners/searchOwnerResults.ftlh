@@ -7,8 +7,9 @@
 </head>
 
 <body>
-<#include "../partials/sidebar.ftlh">
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<#include "../partials/nav.ftlh">
+<div class="d-flex">
+    <#include "../partials/sidebar.ftlh">
     <div class="flex-grow-1">
         <div class="content-cnt">
 
@@ -45,7 +46,9 @@
                                 <td class="text-center"><a class="btn btn-link"
                                                            href="/admin/owner/${owner.ownerID}/edit"><span
                                                 data-feather="tool"></span></a></td>
-                                <td class="text-center"> <button class="btn btn-link" data-toggle="modal" data-target="#modal" data-id="${owner.ownerID}">
+                                <td class="text-center">
+                                    <button class="btn btn-link" data-toggle="modal" data-target="#modal"
+                                            data-id="${owner.ownerID}">
                                         <span data-feather="x"></span>
                                     </button>
 
@@ -81,7 +84,7 @@
             </div>
         </div>
     </div>
-</main>
+</div>
 
 <#include "../partials/scripts.ftlh">
 <script src="/js/main.js"></script>

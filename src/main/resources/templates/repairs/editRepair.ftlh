@@ -16,7 +16,7 @@
             <div class="content-cnt">
                 <div class="w3-row-padding">
                     <h2>Edit Repair</h2>
-                    <div class="table-responsive">
+                    <div class="table-responsive px-2 py-2">
                         <form action="/admin/repair/edit" method="POST">
 
                             <input type="hidden" name="repairID" value="${repair.repairID}">

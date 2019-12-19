@@ -13,9 +13,9 @@
     <#include "../partials/sidebar.ftlh">
     <div class="flex-grow-1">
         <div class="content-cnt">
-            <form class="form-inline" action="/admin/owner/search" name="searchOwnerForm" method="POST">
+            <h2>Search Owner</h2>
 
-                <h2>Search Owner</h2>
+            <form class="form-inline" action="/admin/owner/search" name="searchOwnerForm" method="POST">
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><span data-feather="at-sign"></span></div>

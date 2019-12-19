@@ -14,13 +14,14 @@
 <body>
 <#include "../partials/sidebar.ftlh">
 
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<div class="d-flex">
+    <#include "../partials/sidebar.ftlh">
     <div class="flex-grow-1">
         <div class="content-cnt">
 
             <h2>Results</h2>
 
-            <div class="table-responsive">
+            <div class="table-responsive px-2 py-2">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
@@ -88,7 +89,7 @@
             </div>
         </div>
     </div>
-</main>
+</div>
 
 <#include "../partials/scripts.ftlh">
 <script src="/js/main.js"></script>
