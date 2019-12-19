@@ -1,5 +1,6 @@
 package com.projectfuture.team0.developersorchestra.service;
 
+import com.projectfuture.team0.developersorchestra.SecurityConfig;
 import com.projectfuture.team0.developersorchestra.domain.Owner;
 import com.projectfuture.team0.developersorchestra.enums.UserPrivileges;
 import com.projectfuture.team0.developersorchestra.forms.RegisterForm;
@@ -22,8 +23,13 @@ public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerToOwnerModelMapper mapper;
 
+    @Autowired
+    private SecurityConfig securityConfig;
+
     @Override
     public Owner createOwner(Owner owner) {
+        owner.setPassword(securityConfig.passwordEncoder().encode(owner.getPassword()));
+        owner.setUserPrivileges(UserPrivileges.USER);
         return ownerRepository.save(owner);
     };
 
@@ -36,7 +42,7 @@ public class OwnerServiceImpl implements OwnerService {
         originalOwner.setEmail(ownerModel.getEmail());
         originalOwner.setOwnerAddress(ownerModel.getOwnerAddress());
         originalOwner.setPhoneNumber(ownerModel.getPhoneNumber());
-        originalOwner.setPassword(ownerModel.getPassword());
+        originalOwner.setPassword(securityConfig.passwordEncoder().encode(ownerModel.getPassword()));
         originalOwner.setPropertyType(ownerModel.getPropertyType());
         return ownerRepository.save(originalOwner);
     }
