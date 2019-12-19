@@ -17,12 +17,16 @@
                     <h2>Edit Repair</h2>
                     <div class="table-responsive">
                         <form action="/admin/repair/edit" method="POST">
+
+                            <input type="hidden" name="repairID" value="${repair.repairID}">
+
+
                             <label for="datepicker">Date</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                                 </div>
-                                <input type="text" class="form-control" id="datepicker" name="publicationDate" value="${repair.date}">
+                                <input type="date" class="form-control" id="datepicker" name="dateHTML" value="${repair.dateHTML}">
                             </div>
 
                             <label for="repairStatus">Repair Status</label>
@@ -49,8 +53,8 @@
                             <label for="repairAddress">Repair Address</label>
                             <input type="text" class="form-control" id="repairAddress" name="repairAddress" value="${repair.repairAddress}">
 
-                            <label for="owner">Owner's TaxID</label>
-                            <input type="text" class="form-control" id="owner" name="owner" value="${repair.owner.taxID}">
+                            <label for="ownerTaxID">Owner's TaxID</label>
+                            <input type="text" class="form-control" id="ownerTaxID" name="ownerTaxID" value="${repair.ownerTaxID}">
 
                             <label for="description">Description</label>
                             <input type="text" class="form-control" id="description" name="description" value="${repair.description}">

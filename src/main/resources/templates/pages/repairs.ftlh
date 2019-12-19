@@ -33,29 +33,28 @@
                     </thead>
                     <tbody>
                     <#if repairs??>
-                        <#list repairs as repair>
-                            <tr data-id="${repair.repairID}">
-                                <td>${repair.repairID}</td>
-                                <td>${repair.date}</td>
-                                <td>${repair.repairStatus}</td>
-                                <td>${repair.repairType}</td>
-                                <td>${repair.cost}</td>
-                                <td>${repair.repairAddress}</td>
-                                <td>${repair.owner.taxID}</td>
-                                <td>${repair.description}</td>
-                                <td class="text-center">
-                                    <a href="/admin/repair/${repair.repairID}/edit" title="Edit Repair">
-                                        <span data-feather="edit-3"></span>
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn btn-link" data-toggle="modal" data-target="#modal"
-                                            data-id="${repair.repairID}">
-                                        <span data-feather="x"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                        </#list>
+                    <#list repairs as repair>
+                        <tr data-id="${repair.repairID}">
+                            <td>${repair.repairID}</td>
+                            <td>${repair.date}</td>
+                            <td>${repair.repairStatus}</td>
+                            <td>${repair.repairType}</td>
+                            <td>${repair.cost}</td>
+                            <td>${repair.repairAddress}</td>
+                            <td>${repair.ownerTaxID}</td>
+                            <td>${repair.description}</td>
+                            <td class="text-center">
+                                <a href="/admin/repair/${repair.repairID}/edit" title="Edit Repair">
+                                    <span data-feather="edit-3"></span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-link" data-toggle="modal" data-target="#modal" data-id="${repair.repairID}">
+                                    <span data-feather="x"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </#list>
                     </#if>
                     </tbody>
                 </table>

@@ -47,7 +47,7 @@
                         <td>${repair.repairType}</td>
                         <td>${repair.cost}</td>
                         <td>${repair.repairAddress}</td>
-                        <td>${repair.owner.taxID}</td>
+                        <td>${repair.ownerTaxID}</td>
                         <td>${repair.description}</td>
                         <td class="text-center"><a class="btn btn-link"
                                                    href="/admin/repair/${repair.repairID}/edit"><span

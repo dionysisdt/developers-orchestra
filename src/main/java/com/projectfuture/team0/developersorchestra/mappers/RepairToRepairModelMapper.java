@@ -17,7 +17,9 @@ public class RepairToRepairModelMapper {
         repairModel.setRepairID(repair.getRepairID());
         repairModel.setDate(repair.getDate());
         repairModel.setCost(repair.getCost());
-        repairModel.setOwner(repair.getOwner());
+        repairModel.setOwnerFirstName(repair.getOwner().getFirstName());
+        repairModel.setOwnerLastName(repair.getOwner().getLastName());
+        repairModel.setOwnerTaxID(repair.getOwner().getTaxID());
         repairModel.setRepairAddress(repair.getRepairAddress());
         repairModel.setRepairType(repair.getRepairType() != null ? repair.getRepairType() : RepairType.DEFAULT);
         repairModel.setPropertyType(repair.getOwner().getPropertyType() != null ? repair.getOwner().getPropertyType().getFullName() : PropertyType.DEFAULT.getFullName());
