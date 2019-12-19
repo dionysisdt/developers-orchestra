@@ -15,7 +15,7 @@
     <div class="flex-grow-1">
         <div class="content-cnt">
             <h2>Edit Owner</h2>
-            <div class="table-responsive">
+            <div class="table-responsive px-2 py-2">
                 <form action="/admin/owner/edit" method="POST">
 
                     <input type="hidden" name="ownerID" value="${owner.ownerID}">
@@ -51,23 +51,17 @@
                     <input type="password" class="form-control" id="password" name="password"
                            value="${owner.password}">
 
-                    <label for="propertyType">Property type</label>
-                    <select class="custom-select" id="propertyType" name="propertyType">
-                        <#if propertyTypes??>
-                            <#list propertyTypes as propertyType>
-                                <option value="${propertyType}"<#if owner.propertyType == propertyType> selected</#if>>${propertyType}</option>
-                            </#list>
-                        </#if>
-                    </select>
-
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
-                            <label class="form-check-label" for="invalidCheck3">
-                                Agree to terms and conditions
-                            </label>
-                        </div>
+                    <div class="mb-3">
+                        <label for="propertyType">Property type</label>
+                        <select class="custom-select" id="propertyType" name="propertyType">
+                            <#if propertyTypes??>
+                                <#list propertyTypes as propertyType>
+                                    <option value="${propertyType}"<#if owner.propertyType == propertyType> selected</#if>>${propertyType}</option>
+                                </#list>
+                            </#if>
+                        </select>
                     </div>
+
                     <button class="btn btn-primary" type="submit">Update Owner</button>
                 </form>
             </div>
